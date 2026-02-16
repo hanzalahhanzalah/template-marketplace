@@ -1,0 +1,332 @@
+.page {
+    padding-top: 80px;
+}
+
+/* Back Link */
+.backContainer {
+    padding-top: 24px;
+}
+
+.backLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: color var(--transition-fast);
+}
+
+.backLink:hover {
+    color: var(--accent-primary);
+}
+
+/* Preview Section */
+.previewSection {
+    margin-top: 24px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-left: 24px;
+    margin-right: 24px;
+}
+
+.previewSection.fullscreen {
+    position: fixed;
+    inset: 0;
+    margin: 0;
+    border-radius: 0;
+    z-index: 9999;
+}
+
+.previewHeader {
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border-color);
+    background: var(--bg-primary);
+}
+
+.previewControls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.viewModes {
+    display: flex;
+    gap: 8px;
+}
+
+.viewModeBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.viewModeBtn:hover {
+    color: var(--text-primary);
+    border-color: var(--border-hover);
+}
+
+.viewModeBtn.active {
+    color: white;
+    background: var(--accent-primary);
+    border-color: var(--accent-primary);
+}
+
+.fullscreenBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.fullscreenBtn:hover {
+    color: var(--text-primary);
+    border-color: var(--border-hover);
+}
+
+/* Preview Frame */
+.previewWrapper {
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+    min-height: 600px;
+    background: var(--bg-tertiary);
+}
+
+.previewSection.fullscreen .previewWrapper {
+    min-height: calc(100vh - 60px);
+    padding: 0;
+}
+
+.previewFrame {
+    width: 100%;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transition: max-width var(--transition-normal);
+}
+
+.previewSection.fullscreen .previewFrame {
+    border-radius: 0;
+    max-width: 100% !important;
+    height: 100%;
+}
+
+.iframe {
+    width: 100%;
+    height: 600px;
+    border: none;
+}
+
+.previewSection.fullscreen .iframe {
+    height: calc(100vh - 60px);
+}
+
+/* Info Section */
+.infoSection {
+    padding: 80px 0;
+}
+
+.infoGrid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 48px;
+    align-items: start;
+}
+
+/* Main Content */
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+.description {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+}
+
+/* Features */
+.featuresSection h3,
+.techSection h3 {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+}
+
+.featuresList {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.featureItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+/* Technologies */
+.techList {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.techBadge {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-secondary);
+}
+
+/* Sidebar */
+.sidebar {
+    position: sticky;
+    top: 100px;
+}
+
+.buyCard {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 32px;
+}
+
+.buyCard h3 {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+}
+
+.buyCard>p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+}
+
+.buyLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.buyLink {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    transition: all var(--transition-fast);
+}
+
+.buyLink:hover {
+    border-color: var(--accent-primary);
+    background: var(--accent-light);
+}
+
+.buyPlatform {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.buyIcon {
+    font-size: 1.25rem;
+}
+
+.buyPrice {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--accent-primary);
+}
+
+.buyNote {
+    display: flex;
+    gap: 10px;
+    padding: 16px;
+    background: var(--accent-light);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.buyNote svg {
+    flex-shrink: 0;
+    color: var(--accent-primary);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .infoGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        position: static;
+    }
+
+    .featuresList {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .previewSection {
+        margin-left: 0;
+        margin-right: 0;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+
+    .viewModes {
+        flex-wrap: wrap;
+    }
+
+    .viewModeBtn span:last-child {
+        display: none;
+    }
+
+    .title {
+        font-size: 1.75rem;
+    }
+}

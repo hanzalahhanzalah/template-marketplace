@@ -1,0 +1,209 @@
+/* Hero Section */
+.hero {
+    padding: 120px 0 60px;
+    background: var(--bg-secondary);
+    text-align: center;
+}
+
+.heroContent {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.heroContent h1 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    margin-bottom: 20px;
+    color: var(--text-primary);
+}
+
+.heroContent p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+    line-height: 1.7;
+}
+
+.heroActions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Categories */
+.categories {
+    padding: 30px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.categoryList {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.categoryItem {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 20px;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    transition: all var(--transition-fast);
+}
+
+.categoryItem:hover {
+    color: var(--accent-primary);
+    border-color: var(--accent-primary);
+}
+
+.categoryItem span {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* Templates Section */
+.templates {
+    background: var(--bg-primary);
+}
+
+.viewAll {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Trust Section */
+.trust {
+    background: var(--bg-secondary);
+}
+
+.trustGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.trustCard {
+    text-align: center;
+    padding: 32px 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-normal);
+}
+
+.trustCard:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-4px);
+}
+
+.trustIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    margin-bottom: 16px;
+    background: var(--accent-light);
+    border-radius: 12px;
+    color: var(--accent-primary);
+}
+
+.trustCard h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+.trustCard p {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* Premium Section */
+.premium {
+    background: var(--bg-primary);
+}
+
+/* Blog Section */
+.blog {
+    background: var(--bg-secondary);
+}
+
+/* Newsletter */
+.newsletter {
+    padding: 80px 0;
+    background: var(--bg-primary);
+}
+
+.newsletterBox {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.newsletterBox h2 {
+    margin-bottom: 12px;
+}
+
+.newsletterBox p {
+    color: var(--text-muted);
+    margin-bottom: 32px;
+}
+
+.newsletterForm {
+    display: flex;
+    gap: 12px;
+}
+
+.emailInput {
+    flex: 1;
+    padding: 14px 20px;
+    font-size: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    outline: none;
+    transition: border-color var(--transition-fast);
+}
+
+.emailInput:focus {
+    border-color: var(--accent-primary);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .trustGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 100px 0 50px;
+    }
+
+    .heroActions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .heroActions .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .trustGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .newsletterForm {
+        flex-direction: column;
+    }
+}
