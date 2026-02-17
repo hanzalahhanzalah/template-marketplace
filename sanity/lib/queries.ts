@@ -5,7 +5,7 @@ import { client } from './client';
 // ============================
 
 export async function getFreeTemplates() {
-    return client.fetch(`
+  return client.fetch(`
     *[_type == "template" && pricingType == "free"] | order(order asc) {
       title,
       "slug": slug.current,
@@ -13,6 +13,7 @@ export async function getFreeTemplates() {
       thumbnail,
       "category": category->title,
       demoUrl,
+      "demoZipUrl": demoZip.asset->url,
       downloadUrl,
       pricingType,
       price,
@@ -23,7 +24,7 @@ export async function getFreeTemplates() {
 }
 
 export async function getPremiumTemplates() {
-    return client.fetch(`
+  return client.fetch(`
     *[_type == "template" && pricingType == "premium"] | order(order asc) {
       title,
       "slug": slug.current,
@@ -31,6 +32,7 @@ export async function getPremiumTemplates() {
       thumbnail,
       "category": category->title,
       demoUrl,
+      "demoZipUrl": demoZip.asset->url,
       pricingType,
       price,
       buyLinks,
@@ -41,7 +43,7 @@ export async function getPremiumTemplates() {
 }
 
 export async function getFeaturedFreeTemplates(limit = 6) {
-    return client.fetch(`
+  return client.fetch(`
     *[_type == "template" && pricingType == "free" && isFeatured == true] | order(order asc) [0...$limit] {
       title,
       "slug": slug.current,
@@ -49,6 +51,7 @@ export async function getFeaturedFreeTemplates(limit = 6) {
       thumbnail,
       "category": category->title,
       demoUrl,
+      "demoZipUrl": demoZip.asset->url,
       pricingType,
       price
     }
@@ -56,7 +59,7 @@ export async function getFeaturedFreeTemplates(limit = 6) {
 }
 
 export async function getFeaturedPremiumTemplates(limit = 4) {
-    return client.fetch(`
+  return client.fetch(`
     *[_type == "template" && pricingType == "premium" && isFeatured == true] | order(order asc) [0...$limit] {
       title,
       "slug": slug.current,
@@ -64,6 +67,7 @@ export async function getFeaturedPremiumTemplates(limit = 4) {
       thumbnail,
       "category": category->title,
       demoUrl,
+      "demoZipUrl": demoZip.asset->url,
       pricingType,
       price
     }
@@ -71,7 +75,7 @@ export async function getFeaturedPremiumTemplates(limit = 4) {
 }
 
 export async function getTemplateBySlug(slug: string) {
-    return client.fetch(`
+  return client.fetch(`
     *[_type == "template" && slug.current == $slug][0] {
       title,
       "slug": slug.current,
@@ -79,6 +83,7 @@ export async function getTemplateBySlug(slug: string) {
       thumbnail,
       "category": category->title,
       demoUrl,
+      "demoZipUrl": demoZip.asset->url,
       downloadUrl,
       pricingType,
       price,
@@ -91,7 +96,7 @@ export async function getTemplateBySlug(slug: string) {
 }
 
 export async function getAllTemplateSlugs() {
-    return client.fetch(`
+  return client.fetch(`
     *[_type == "template"] { "slug": slug.current }
   `);
 }
@@ -101,7 +106,7 @@ export async function getAllTemplateSlugs() {
 // ============================
 
 export async function getBlogPosts() {
-    return client.fetch(`
+  return client.fetch(`
     *[_type == "blogPost"] | order(publishedAt desc) {
       title,
       "slug": slug.current,
@@ -116,7 +121,7 @@ export async function getBlogPosts() {
 }
 
 export async function getLatestBlogPosts(limit = 3) {
-    return client.fetch(`
+  return client.fetch(`
     *[_type == "blogPost"] | order(publishedAt desc) [0...$limit] {
       title,
       "slug": slug.current,
@@ -130,7 +135,7 @@ export async function getLatestBlogPosts(limit = 3) {
 }
 
 export async function getBlogPostBySlug(slug: string) {
-    return client.fetch(`
+  return client.fetch(`
     *[_type == "blogPost" && slug.current == $slug][0] {
       title,
       "slug": slug.current,
@@ -148,7 +153,7 @@ export async function getBlogPostBySlug(slug: string) {
 }
 
 export async function getAllBlogSlugs() {
-    return client.fetch(`
+  return client.fetch(`
     *[_type == "blogPost"] { "slug": slug.current }
   `);
 }
@@ -158,7 +163,7 @@ export async function getAllBlogSlugs() {
 // ============================
 
 export async function getCategories(type: 'template' | 'blog') {
-    return client.fetch(`
+  return client.fetch(`
     *[_type == "category" && categoryType == $type] | order(order asc) {
       title,
       "slug": slug.current,
@@ -172,7 +177,7 @@ export async function getCategories(type: 'template' | 'blog') {
 // ============================
 
 export async function getSiteSettings() {
-    return client.fetch(`
+  return client.fetch(`
     *[_type == "siteSettings"][0] {
       siteName,
       logoText,
@@ -190,7 +195,7 @@ export async function getSiteSettings() {
 // ============================
 
 export async function getFAQs(page = 'contact') {
-    return client.fetch(`
+  return client.fetch(`
     *[_type == "faq" && page == $page] | order(order asc) {
       question,
       answer
@@ -203,7 +208,7 @@ export async function getFAQs(page = 'contact') {
 // ============================
 
 export async function getAuthors() {
-    return client.fetch(`
+  return client.fetch(`
     *[_type == "author"] {
       name,
       "slug": slug.current,

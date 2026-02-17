@@ -77,14 +77,12 @@ export default function TemplateCard({
                             Download
                         </Link>
                     ) : (
-                        <a
-                            href={demoUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                        <Link
+                            href={`/preview/${slug}`}
                             className={styles.demoBtn}
                         >
                             Live Demo
-                        </a>
+                        </Link>
                     )}
                 </div>
             </div>

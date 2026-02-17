@@ -21,126 +21,85 @@
     color: var(--accent-primary);
 }
 
-/* Preview Section */
-.previewSection {
-    margin-top: 24px;
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-color);
-    border-radius: 20px;
-    overflow: hidden;
-    margin-left: 24px;
-    margin-right: 24px;
+/* Preview Hero Section */
+.previewHero {
+    margin: 40px 0;
 }
 
-.previewSection.fullscreen {
-    position: fixed;
-    inset: 0;
-    margin: 0;
-    border-radius: 0;
-    z-index: 9999;
-}
-
-.previewHeader {
-    padding: 16px 24px;
-    border-bottom: 1px solid var(--border-color);
-    background: var(--bg-primary);
-}
-
-.previewControls {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-}
-
-.viewModes {
-    display: flex;
-    gap: 8px;
-}
-
-.viewModeBtn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 16px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--text-secondary);
-    background: transparent;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all var(--transition-fast);
-}
-
-.viewModeBtn:hover {
-    color: var(--text-primary);
-    border-color: var(--border-hover);
-}
-
-.viewModeBtn.active {
-    color: white;
-    background: var(--accent-primary);
-    border-color: var(--accent-primary);
-}
-
-.fullscreenBtn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 16px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--text-secondary);
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all var(--transition-fast);
-}
-
-.fullscreenBtn:hover {
-    color: var(--text-primary);
-    border-color: var(--border-hover);
-}
-
-/* Preview Frame */
-.previewWrapper {
-    display: flex;
-    justify-content: center;
-    padding: 24px;
-    min-height: 600px;
-    background: var(--bg-tertiary);
-}
-
-.previewSection.fullscreen .previewWrapper {
-    min-height: calc(100vh - 60px);
-    padding: 0;
-}
-
-.previewFrame {
+.thumbnailWrapper {
+    position: relative;
     width: 100%;
-    background: white;
-    border-radius: 12px;
+    aspect-ratio: 16 / 9;
+    background: #e9ecef;
+    border-radius: 24px;
     overflow: hidden;
-    box-shadow: var(--shadow-lg);
-    transition: max-width var(--transition-normal);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+    border: 1px solid var(--border-color);
 }
 
-.previewSection.fullscreen .previewFrame {
-    border-radius: 0;
-    max-width: 100% !important;
+.mainThumbnail {
+    width: 100%;
     height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.iframe {
+.thumbnailOverlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease, background 0.3s ease;
+}
+
+.thumbnailWrapper:hover .thumbnailOverlay {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.thumbnailWrapper:hover .mainThumbnail {
+    transform: scale(1.05);
+}
+
+.launchBtn {
+    background: white;
+    color: var(--text-primary);
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(20px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.thumbnailWrapper:hover .launchBtn {
+    transform: translateY(0);
+}
+
+.launchBtn:hover {
+    background: var(--accent-primary);
+    color: white;
+    transform: scale(1.05);
+}
+
+.placeholderThumbnail {
     width: 100%;
-    height: 600px;
-    border: none;
-}
-
-.previewSection.fullscreen .iframe {
-    height: calc(100vh - 60px);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-size: 2rem;
+    font-weight: 800;
 }
 
 /* Info Section */

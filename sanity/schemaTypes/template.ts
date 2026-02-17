@@ -65,6 +65,15 @@ export default defineType({
             type: 'url',
         }),
         defineField({
+            name: 'demoZip',
+            title: 'Template Demo (ZIP File)',
+            type: 'file',
+            options: {
+                accept: '.zip',
+            },
+            description: 'Upload the ZIP file containing index.html and other assets for the live preview.',
+        }),
+        defineField({
             name: 'downloadUrl',
             title: 'Download URL (for free templates)',
             type: 'url',

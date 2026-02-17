@@ -131,67 +131,28 @@ export default function TemplateDetailPage() {
                 </Link>
             </div>
 
-            {/* Live Preview Section */}
-            <section className={`${styles.previewSection} ${isFullscreen ? styles.fullscreen : ''}`}>
-                <div className={styles.previewHeader}>
-                    <div className={styles.previewControls}>
-                        <div className={styles.viewModes}>
-                            {Object.entries(viewModes).map(([mode, config]) => (
-                                <button
-                                    key={mode}
-                                    onClick={() => setViewMode(mode as 'desktop' | 'tablet' | 'mobile')}
-                                    className={`${styles.viewModeBtn} ${viewMode === mode ? styles.active : ''}`}
-                                >
-                                    {mode === 'desktop' && (
-                                        <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                                            <rect x="2" y="3" width="20" height="14" rx="2" />
-                                            <path d="M8 21h8M12 17v4" />
-                                        </svg>
-                                    )}
-                                    {mode === 'tablet' && (
-                                        <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                                            <rect x="4" y="2" width="16" height="20" rx="2" />
-                                            <path d="M12 18h.01" />
-                                        </svg>
-                                    )}
-                                    {mode === 'mobile' && (
-                                        <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                                            <rect x="5" y="2" width="14" height="20" rx="2" />
-                                            <path d="M12 18h.01" />
-                                        </svg>
-                                    )}
-                                    {config.label}
-                                </button>
-                            ))}
-                        </div>
-                        <button
-                            onClick={() => setIsFullscreen(!isFullscreen)}
-                            className={styles.fullscreenBtn}
-                        >
-                            {isFullscreen ? (
-                                <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                                    <path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3" />
-                                </svg>
+            {/* Live Preview Hero Section */}
+            <section className={styles.previewHero}>
+                <div className="container">
+                    <div className={styles.previewHeroContent}>
+                        <div className={styles.thumbnailWrapper}>
+                            {thumbnailUrl ? (
+                                <img src={thumbnailUrl} alt={templateData.title} className={styles.mainThumbnail} />
                             ) : (
-                                <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                                    <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" />
-                                </svg>
+                                <div className={styles.placeholderThumbnail}>
+                                    <span>{templateData.title}</span>
+                                </div>
                             )}
-                            {isFullscreen ? 'Exit Fullscreen' : 'Fullscreen'}
-                        </button>
-                    </div>
-                </div>
-
-                <div className={styles.previewWrapper}>
-                    <div
-                        className={styles.previewFrame}
-                        style={{ maxWidth: viewModes[viewMode].width }}
-                    >
-                        <iframe
-                            src={templateData.demoUrl}
-                            title={`${templateData.title} Preview`}
-                            className={styles.iframe}
-                        />
+                            <div className={styles.thumbnailOverlay}>
+                                <Link href={`/preview/${slug}`} className={styles.launchBtn}>
+                                    <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                    </svg>
+                                    Launch Live Preview
+                                </Link>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
