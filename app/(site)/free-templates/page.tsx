@@ -24,7 +24,7 @@ function mapTemplate(t: Record<string, unknown>) {
         title: t.title as string,
         slug: t.slug as string,
         description: t.description as string,
-        thumbnail: t.thumbnail ? urlFor(t.thumbnail).width(600).height(375).url() : '',
+        thumbnail: t.thumbnail ? urlFor(t.thumbnail).width(1000).height(625).quality(90).auto('format').url() : '',
         category: t.category as string,
         demoUrl: (t.demoUrl as string) || '#',
         price: 'free' as string,
