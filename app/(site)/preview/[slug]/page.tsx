@@ -44,8 +44,10 @@ export default function PreviewPage() {
     }
 
     // Determine the source URL
-    // Priority: Internal Demo (if we set up script) > Live Demo URL
-    const demoUrl = template.demoUrl || '#';
+    // Priority: Automated ZIP Proxy > Manual demoUrl
+    const demoUrl = template.demoZipUrl
+        ? `/api/serve-demo/${slug}/index.html`
+        : (template.demoUrl || '#');
 
     return (
         <div className={styles.page}>
