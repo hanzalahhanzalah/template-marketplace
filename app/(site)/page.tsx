@@ -92,6 +92,19 @@ function mapTemplate(t: Record<string, unknown>) {
   };
 }
 
+// Transform Sanity blog data to card props
+function mapPost(p: Record<string, unknown>) {
+  return {
+    title: p.title as string,
+    slug: p.slug as string,
+    excerpt: p.excerpt as string,
+    thumbnail: p.thumbnail && typeof p.thumbnail === 'object' ? urlFor(p.thumbnail).width(600).height(375).url() : '',
+    category: p.category as string,
+    publishedAt: p.publishedAt as string,
+    readTime: (p.readTime as string) || '5 min read',
+  };
+}
+
 export default async function HomePage() {
   // Fetch from Sanity, fallback to demo data
   let freeTemplates, premiumTemplates, latestPosts;
@@ -105,7 +118,7 @@ export default async function HomePage() {
 
     freeTemplates = sanityFree?.length > 0 ? sanityFree.map(mapTemplate) : fallbackFreeTemplates;
     premiumTemplates = sanityPremium?.length > 0 ? sanityPremium.map(mapTemplate) : fallbackPremiumTemplates;
-    latestPosts = sanityPosts?.length > 0 ? sanityPosts : fallbackPosts;
+    latestPosts = sanityPosts?.length > 0 ? sanityPosts.map(mapPost) : fallbackPosts;
   } catch {
     freeTemplates = fallbackFreeTemplates;
     premiumTemplates = fallbackPremiumTemplates;
