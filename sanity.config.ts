@@ -18,4 +18,20 @@ export default defineConfig({
     schema: {
         types: schemaTypes,
     },
+
+    document: {
+        actions: (prev, context) => {
+            // Reorder actions to make "Delete" more prominent
+            const deleteAction = prev.find((action) => action.action === 'delete');
+            const otherActions = prev.filter((action) => action.action !== 'delete');
+
+            if (deleteAction) {
+                // Put delete at the end or start depending on preference
+                // Standard order: [Publish, ..., Delete]
+                return [...otherActions, deleteAction];
+            }
+
+            return prev;
+        },
+    },
 });
