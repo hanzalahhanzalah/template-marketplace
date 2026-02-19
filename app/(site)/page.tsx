@@ -98,7 +98,7 @@ function mapPost(p: Record<string, unknown>) {
     title: p.title as string,
     slug: p.slug as string,
     excerpt: p.excerpt as string,
-    thumbnail: p.thumbnail && typeof p.thumbnail === 'object' ? urlFor(p.thumbnail).width(600).height(375).url() : '',
+    thumbnail: p.thumbnail ? urlFor(p.thumbnail).width(1000).height(625).quality(90).auto('format').url() : '',
     category: p.category as string,
     publishedAt: p.publishedAt as string,
     readTime: (p.readTime as string) || '5 min read',
