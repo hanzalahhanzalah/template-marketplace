@@ -4,6 +4,8 @@ import { getPremiumTemplates, getCategories } from '@/sanity/lib/queries';
 import { urlFor } from '@/sanity/lib/client';
 import styles from './page.module.css';
 
+export const revalidate = 60; // Revalidate every 60 seconds
+
 export const metadata: Metadata = {
     title: 'Website Templates | TemplateForge - Premium HTML, CSS & JS Templates',
     description: 'Browse our collection of premium, hand-crafted website templates. Fast, responsive, and SEO-optimized for modern web projects.',

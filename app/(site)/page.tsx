@@ -7,6 +7,8 @@ import { getLatestBlogPosts, getSiteSettings } from '@/sanity/lib/queries';
 import { urlFor } from '@/sanity/lib/client';
 import styles from './page.module.css';
 
+export const revalidate = 60; // Revalidate every 60 seconds
+
 // Fallback data when Sanity is empty
 const fallbackFreeTemplates = [
   { title: 'Developer - Portfolio Template', slug: 'developer-portfolio', description: 'Clean and minimal portfolio template perfect for developers and designers.', thumbnail: '', category: 'Portfolio', demoUrl: '#', price: 'free' },
