@@ -4,7 +4,7 @@ import { getBlogPosts, getCategories } from '@/sanity/lib/queries';
 import { urlFor } from '@/sanity/lib/client';
 import styles from './page.module.css';
 
-export const revalidate = 60; // Revalidate every 60 seconds
+export const revalidate = 0; // Force immediate refresh (no-cache)
 
 export const metadata: Metadata = {
     title: 'Blog | TemplateForge - Web Design Tips & Tutorials',
