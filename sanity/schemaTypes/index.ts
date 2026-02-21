@@ -4,6 +4,7 @@ import category from './category';
 import author from './author';
 import siteSettings from './siteSettings';
 import faq from './faq';
+import contactMessage from './contactMessage';
 
 export const schemaTypes = [
     template,
@@ -12,4 +13,5 @@ export const schemaTypes = [
     author,
     siteSettings,
     faq,
+    contactMessage,
 ];

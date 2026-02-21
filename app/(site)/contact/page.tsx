@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { getFAQs } from '@/sanity/lib/queries';
+import ContactForm from '@/components/ContactForm';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
@@ -94,39 +95,7 @@ export default async function ContactPage() {
                             <h2>Send a Message</h2>
                             <p>Fill out the form below and we&apos;ll get back to you within 24 hours.</p>
                         </div>
-
-                        <form className={styles.contactForm}>
-                            <div className={styles.formRow}>
-                                <div className={styles.formGroup}>
-                                    <label htmlFor="name">Name</label>
-                                    <input type="text" id="name" placeholder="Your name" required />
-                                </div>
-                                <div className={styles.formGroup}>
-                                    <label htmlFor="email">Email</label>
-                                    <input type="email" id="email" placeholder="your@email.com" required />
-                                </div>
-                            </div>
-
-                            <div className={styles.formGroup}>
-                                <label htmlFor="subject">Subject</label>
-                                <select id="subject" required defaultValue="">
-                                    <option value="" disabled>Select a topic</option>
-                                    <option value="general">General Inquiry</option>
-                                    <option value="support">Technical Support</option>
-                                    <option value="custom">Custom Development</option>
-                                    <option value="partnership">Partnership</option>
-                                </select>
-                            </div>
-
-                            <div className={styles.formGroup}>
-                                <label htmlFor="message">Message</label>
-                                <textarea id="message" rows={6} placeholder="Your message..." required></textarea>
-                            </div>
-
-                            <button type="submit" className="btn btn-primary">
-                                Send Message
-                            </button>
-                        </form>
+                        <ContactForm />
                     </div>
                 </div>
             </section>
