@@ -99,27 +99,6 @@ export default async function BlogPage() {
                 </div>
             </section>
 
-            {/* Newsletter */}
-            <section className={styles.newsletter}>
-                <div className="container">
-                    <div className={styles.newsletterCard}>
-                        <div className={styles.newsletterContent}>
-                            <h2>Stay Updated</h2>
-                            <p>Subscribe to our newsletter for the latest web design tips and template releases.</p>
-                            <form className={styles.newsletterForm}>
-                                <input
-                                    type="email"
-                                    placeholder="Enter your email"
-                                    className={styles.emailInput}
-                                />
-                                <button type="submit" className="btn btn-primary">
-                                    Subscribe
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </div>
     );
 }

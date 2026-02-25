@@ -88,16 +88,6 @@ export default function Footer() {
                         </nav>
                     </div>
 
-                    {/* Social */}
-                    <div className={styles.linkGroup}>
-                        <h4>Follow Us</h4>
-                        <nav>
-                            <a href={settings.socialLinks?.twitter || '#'} target="_blank" rel="noopener noreferrer">Twitter</a>
-                            <a href={settings.socialLinks?.facebook || '#'} target="_blank" rel="noopener noreferrer">Facebook</a>
-                            <a href={settings.socialLinks?.instagram || '#'} target="_blank" rel="noopener noreferrer">Instagram</a>
-                            <a href={settings.socialLinks?.github || '#'} target="_blank" rel="noopener noreferrer">GitHub</a>
-                        </nav>
-                    </div>
                 </div>
 
                 {/* Bottom */}

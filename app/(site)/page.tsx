@@ -252,25 +252,6 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Newsletter */}
-      <section className={styles.newsletter}>
-        <div className="container">
-          <div className={styles.newsletterBox}>
-            <h2>Subscribe to Our Newsletter</h2>
-            <p>Get notified when we release new templates and publish new articles.</p>
-            <form className={styles.newsletterForm}>
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                className={styles.emailInput}
-              />
-              <button type="submit" className="btn btn-primary">
-                Subscribe
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
     </>
   );
 }
