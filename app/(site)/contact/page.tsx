@@ -63,17 +63,41 @@ export default async function ContactPage() {
 
     return (
         <div className={styles.page}>
-            {/* Contact Methods */}
-            <section className={`section ${styles.methods}`} style={{ paddingTop: '100px' }}>
+            {/* Hero */}
+            <section className={styles.hero}>
                 <div className="container">
-                    <div className={styles.methodsGrid}>
-                        {contactMethods.map((method) => (
-                            <a key={method.title} href={method.link} className={styles.methodCard}>
-                                <div className={styles.methodIcon}>{method.icon}</div>
-                                <h3>{method.title}</h3>
-                                <p>{method.description}</p>
-                                <span className={styles.methodValue}>{method.value}</span>
-                            </a>
+                    <h1>Get in Touch</h1>
+                    <p>Have questions about our templates? We&apos;d love to hear from you.</p>
+                </div>
+            </section>
+
+            {/* Contact Form */}
+            <section className={styles.formSection}>
+                <div className="container">
+                    <div className={styles.formWrapper}>
+                        <div className={styles.formHeader}>
+                            <h2>Send a Message</h2>
+                            <p>Fill out the form below and we&apos;ll get back to you within 24 hours.</p>
+                        </div>
+                        <ContactForm />
+                    </div>
+                </div>
+            </section>
+
+            {/* FAQ */}
+            <section className={`section ${styles.faq}`}>
+                <div className="container">
+                    <div className="section-header">
+                        <h2>Frequently Asked Questions</h2>
+                        <p>Quick answers to common questions.</p>
+                    </div>
+
+                    <div className={styles.faqList}>
+                        {faqs.map((faq: { question: string; answer: string }) => (
+                            <div key={faq.question} className={styles.faqItem}>
+                                <h3>{faq.question}</h3>
+                                <p>{faq.answer}</p>
+                            </div>
                         ))}
                     </div>
                 </div>
