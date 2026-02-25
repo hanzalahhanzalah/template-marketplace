@@ -35,22 +35,46 @@ function mapTemplate(t: Record<string, unknown>) {
 
 const defaultCategories = ['All', 'Portfolio', 'Business', 'Crypto', 'Restaurant', 'Blog', 'Agency', 'Health'];
 
-export default async function FreeTemplatesPage() {
-    let templates: { title: string; slug: string; description: string; thumbnail: string; category: string; demoUrl: string; price: string }[];
+import TemplateFilters from '@/components/TemplateFilters';
+
+export default async function FreeTemplatesPage({
+    searchParams,
+}: {
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+    let allTemplates: { title: string; slug: string; description: string; thumbnail: string; category: string; demoUrl: string; price: string }[];
     let categoryNames = defaultCategories;
+
+    const resolvedParams = await searchParams;
+    const currentCategory = (resolvedParams.category as string) || 'All';
+    const searchQuery = (resolvedParams.q as string) || '';
 
     try {
         const [sanityTemplates, sanityCategories] = await Promise.all([
             getFreeTemplates(),
             getCategories('template'),
         ]);
-        templates = sanityTemplates?.length > 0 ? sanityTemplates.map(mapTemplate) : fallbackTemplates;
+        allTemplates = sanityTemplates?.length > 0 ? sanityTemplates.map(mapTemplate) : fallbackTemplates;
         if (sanityCategories?.length > 0) {
             categoryNames = ['All', ...sanityCategories.map((c: { title: string }) => c.title)];
         }
     } catch {
-        templates = fallbackTemplates;
+        allTemplates = fallbackTemplates;
     }
+
+    // Filter templates
+    const filteredTemplates = allTemplates.filter((template) => {
+        const matchesCategory =
+            currentCategory === 'All' ||
+            template.category?.toLowerCase() === currentCategory.toLowerCase();
+
+        const matchesSearch =
+            !searchQuery ||
+            template.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            template.description?.toLowerCase().includes(searchQuery.toLowerCase());
+
+        return matchesCategory && matchesSearch;
+    });
 
     return (
         <div className={styles.page}>
@@ -66,36 +90,25 @@ export default async function FreeTemplatesPage() {
             {/* Filters */}
             <section className={styles.filters}>
                 <div className="container">
-                    <div className={styles.filterBar}>
-                        <div className={styles.categories}>
-                            {categoryNames.map((cat) => (
-                                <button
-                                    key={cat}
-                                    className={`${styles.categoryBtn} ${cat === 'All' ? styles.active : ''}`}
-                                >
-                                    {cat}
-                                </button>
-                            ))}
-                        </div>
-                        <div className={styles.search}>
-                            <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                                <circle cx="11" cy="11" r="8" />
-                                <path d="M21 21l-4.35-4.35" />
-                            </svg>
-                            <input type="text" placeholder="Search free templates..." className={styles.searchInput} />
-                        </div>
-                    </div>
+                    <TemplateFilters categories={categoryNames} baseUrl="/free-templates" />
                 </div>
             </section>
 
             {/* Templates Grid */}
             <section className={styles.templates}>
                 <div className="container">
-                    <div className={`grid grid-3 ${styles.grid}`}>
-                        {templates.map((template) => (
-                            <TemplateCard key={template.slug} {...template} />
-                        ))}
-                    </div>
+                    {filteredTemplates.length > 0 ? (
+                        <div className={`grid grid-3 ${styles.grid}`}>
+                            {filteredTemplates.map((template) => (
+                                <TemplateCard key={template.slug} {...template} />
+                            ))}
+                        </div>
+                    ) : (
+                        <div className={styles.noResults}>
+                            <h3>No templates found</h3>
+                            <p>Try adjusting your search or filters to find what you&apos;re looking for.</p>
+                        </div>
+                    )}
                 </div>
             </section>
         </div>
