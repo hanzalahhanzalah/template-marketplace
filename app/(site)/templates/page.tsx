@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { Suspense } from 'react';
 import TemplateCard from '@/components/TemplateCard';
 import { getPremiumTemplates, getCategories } from '@/sanity/lib/queries';
 import { urlFor } from '@/sanity/lib/client';
@@ -90,7 +91,9 @@ export default async function TemplatesPage({
             {/* Filters */}
             <section className={styles.filters}>
                 <div className="container">
-                    <TemplateFilters categories={categoryNames} baseUrl="/templates" />
+                    <Suspense fallback={<div className={styles.filterPlaceholder}>Loading filters...</div>}>
+                        <TemplateFilters categories={categoryNames} baseUrl="/templates" />
+                    </Suspense>
                 </div>
             </section>
 

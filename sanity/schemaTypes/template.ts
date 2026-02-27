@@ -27,9 +27,10 @@ export default defineType({
         }),
         defineField({
             name: 'thumbnail',
-            title: 'Thumbnail',
+            title: 'Thumbnail (Screenshot)',
             type: 'image',
             options: { hotspot: true },
+            description: 'Upload a high-quality screenshot of the template (16:10 aspect ratio recommended). The system will automatically wrap it in a professional browser mockup.',
         }),
         defineField({
             name: 'category',

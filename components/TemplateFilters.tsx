@@ -2,7 +2,7 @@
 
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
-import styles from './Templates.module.css'; // Reusing styles if possible or defining new ones
+import styles from './TemplateFilters.module.css';
 
 interface TemplateFiltersProps {
     categories: string[];
@@ -51,8 +51,8 @@ export default function TemplateFilters({ categories, baseUrl }: TemplateFilters
                     <button
                         key={cat}
                         className={`${styles.categoryBtn} ${(cat === 'All' && currentCategory === 'All') ||
-                                cat.toLowerCase() === currentCategory.toLowerCase()
-                                ? styles.active : ''
+                            cat.toLowerCase() === currentCategory.toLowerCase()
+                            ? styles.active : ''
                             }`}
                         onClick={() => handleCategoryClick(cat)}
                     >

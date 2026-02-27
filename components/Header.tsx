@@ -33,7 +33,7 @@ export default function Header() {
     return (
         <header className={styles.header}>
             <div className="container">
-                <div className={styles.headerInner}>
+                <div className={styles.headerContainer}>
                     {/* Logo */}
                     <Link href="/" className={styles.logo}>
                         <span className={styles.logoText}>{settings.logoText}</span>
@@ -57,9 +57,11 @@ export default function Header() {
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                         aria-label="Toggle menu"
                     >
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                        <div className={`${styles.hamburger} ${isMobileMenuOpen ? styles.open : ''}`}>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
                     </button>
                 </div>
             </div>

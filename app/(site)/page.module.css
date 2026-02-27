@@ -1,6 +1,6 @@
 /* Hero Section */
 .hero {
-    padding: 120px 0 60px;
+    padding: 140px 0 60px;
     background: var(--bg-secondary);
     text-align: center;
 }
@@ -181,6 +181,28 @@
 @media (max-width: 1024px) {
     .trustGrid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .categoryList {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 8px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .categoryItem {
+        flex: 0 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .trustGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .heroContent h1 {
+        font-size: 2rem;
     }
 }
 

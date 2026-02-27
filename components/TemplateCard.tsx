@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import Link from 'next/link';
+import BrowserMockup from './BrowserMockup';
 import styles from './TemplateCard.module.css';
 
 interface TemplateCardProps {
@@ -32,28 +32,7 @@ export default function TemplateCard({
                     {isFree ? 'FREE' : price}
                 </span>
 
-                <div className={styles.browserFrame}>
-                    <div className={styles.browserDots}>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-                <div className={styles.imageContainer}>
-                    {thumbnail ? (
-                        <Image
-                            src={thumbnail}
-                            alt={title}
-                            fill
-                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                            className={styles.image}
-                        />
-                    ) : (
-                        <div className={styles.placeholder}>
-                            <span>Preview</span>
-                        </div>
-                    )}
-                </div>
+                <BrowserMockup src={thumbnail} alt={title} title={`${slug}.com`} />
             </Link>
 
             {/* Content */}
