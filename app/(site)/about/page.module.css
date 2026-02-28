@@ -206,14 +206,21 @@
         padding: 40px;
     }
 
+    .statsGrid {
+        grid-template-columns: 1fr;
+        /* Stack at 768px to match globals.css grid-4 */
+    }
+
     .ctaBox {
         padding: 40px 24px;
     }
-}
 
-@media (max-width: 600px) {
-    .statsGrid {
-        grid-template-columns: 1fr;
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .storyText h2 {
+        font-size: 1.5rem;
     }
 
     .valueCard {
@@ -223,12 +230,14 @@
     .statNumber {
         font-size: 1.75rem;
     }
+}
 
-    .hero p {
-        font-size: 1rem;
+@media (max-width: 480px) {
+    .hero {
+        padding: 60px 0 40px;
     }
 
-    .storyText h2 {
+    .statNumber {
         font-size: 1.5rem;
     }
 }
