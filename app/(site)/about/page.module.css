@@ -206,11 +206,29 @@
         padding: 40px;
     }
 
-    .statsGrid {
-        grid-template-columns: 1fr 1fr;
-    }
-
     .ctaBox {
         padding: 40px 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    .statsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .valueCard {
+        padding: 24px 16px;
+    }
+
+    .statNumber {
+        font-size: 1.75rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .storyText h2 {
+        font-size: 1.5rem;
     }
 }
