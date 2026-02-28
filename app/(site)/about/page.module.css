@@ -196,6 +196,20 @@
     }
 }
 
+@media (max-width: 600px) {
+    .statsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .storyText h2 {
+        font-size: 1.5rem;
+    }
+}
+
 @media (max-width: 768px) {
     .storyGrid {
         grid-template-columns: 1fr;
