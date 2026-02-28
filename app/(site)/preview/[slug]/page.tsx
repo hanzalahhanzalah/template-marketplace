@@ -66,31 +66,31 @@ export default function PreviewPage() {
                     <button
                         onClick={() => setViewMode('desktop')}
                         className={`${styles.deviceBtn} ${viewMode === 'desktop' ? styles.activeDevice : ''}`}
-                        title="Desktop View"
+                        aria-label="Desktop View"
                     >
-                        <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                             <rect x="2" y="3" width="20" height="14" rx="2" />
-                            <path d="M8 21h8m-4-4v4" />
+                            <path d="M8 21h8M12 17v4" />
                         </svg>
                     </button>
                     <button
                         onClick={() => setViewMode('tablet')}
                         className={`${styles.deviceBtn} ${viewMode === 'tablet' ? styles.activeDevice : ''}`}
-                        title="Tablet View"
+                        aria-label="Tablet View"
                     >
-                        <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                             <rect x="4" y="2" width="16" height="20" rx="2" />
-                            <path d="M12 18h.01" />
+                            <circle cx="12" cy="18" r="1" />
                         </svg>
                     </button>
                     <button
                         onClick={() => setViewMode('mobile')}
                         className={`${styles.deviceBtn} ${viewMode === 'mobile' ? styles.activeDevice : ''}`}
-                        title="Mobile View"
+                        aria-label="Mobile View"
                     >
-                        <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                             <rect x="5" y="2" width="14" height="20" rx="2" />
-                            <path d="M12 18h.01" />
+                            <circle cx="12" cy="18" r="1" />
                         </svg>
                     </button>
                 </div>
