@@ -12,15 +12,6 @@ export const metadata: Metadata = {
     description: 'Browse our collection of premium, hand-crafted website templates. Fast, responsive, and SEO-optimized for modern web projects.',
 };
 
-// Fallback
-const fallbackTemplates = [
-    { title: 'CryptoNexus - Crypto Landing Page', slug: 'cryptonexus', description: 'Modern cryptocurrency landing page with animated charts, ICO countdown, and dark futuristic design.', thumbnail: '', category: 'Crypto', demoUrl: '#', price: '$29' },
-    { title: 'Savoria - Restaurant Template', slug: 'savoria', description: 'Elegant restaurant website with menu sections, reservations, and beautiful food galleries.', thumbnail: '', category: 'Restaurant', demoUrl: '#', price: '$24' },
-    { title: 'Nexus Agency - Creative Portfolio', slug: 'nexus-agency', description: 'One-page agency template with smooth animations, portfolio grid, and modern glassmorphism design.', thumbnail: '', category: 'Agency', demoUrl: '#', price: '$19' },
-    { title: 'EduPro - Online Learning Platform', slug: 'edupro', description: 'Complete education website template with course listings, instructor profiles, and learning management features.', thumbnail: '', category: 'Education', demoUrl: '#', price: '$34' },
-    { title: 'Zoner - Real Estate Platform', slug: 'zoner', description: 'Premium real estate template with property listings, search filters, and agent profiles.', thumbnail: '', category: 'Real Estate', demoUrl: '#', price: '$39' },
-    { title: 'SaaSify - SaaS Landing Page', slug: 'saasify', description: 'Modern SaaS landing page with pricing tables, feature sections, and testimonials carousel.', thumbnail: '', category: 'SaaS', demoUrl: '#', price: '$22' },
-];
 
 function mapTemplate(t: Record<string, unknown>) {
     return {
@@ -55,12 +46,12 @@ export default async function TemplatesPage({
             getPremiumTemplates(),
             getCategories('template'),
         ]);
-        allTemplates = sanityTemplates?.length > 0 ? sanityTemplates.map(mapTemplate) : fallbackTemplates;
+        allTemplates = sanityTemplates?.length > 0 ? sanityTemplates.map(mapTemplate) : [];
         if (sanityCategories?.length > 0) {
             categoryNames = ['All', ...sanityCategories.map((c: { title: string }) => c.title)];
         }
     } catch {
-        allTemplates = fallbackTemplates;
+        allTemplates = [];
     }
 
     // Filter templates based on category and search query

@@ -9,28 +9,6 @@ import styles from './page.module.css';
 
 export const revalidate = 60; // Revalidate every 60 seconds
 
-// Fallback data when Sanity is empty
-const fallbackFreeTemplates = [
-  { title: 'Developer - Portfolio Template', slug: 'developer-portfolio', description: 'Clean and minimal portfolio template perfect for developers and designers.', thumbnail: '', category: 'Portfolio', demoUrl: '#', price: 'free' },
-  { title: 'BusinessBox - Corporate Template', slug: 'businessbox', description: 'Professional business template with modern design and easy customization.', thumbnail: '', category: 'Business', demoUrl: '#', price: 'free' },
-  { title: 'CryptoLand - Cryptocurrency Template', slug: 'cryptoland', description: 'Modern crypto landing page with ICO countdown and token sale features.', thumbnail: '', category: 'Crypto', demoUrl: '#', price: 'free' },
-  { title: 'FoodHunt - Restaurant Template', slug: 'foodhunt', description: 'Elegant restaurant template with menu sections and reservation form.', thumbnail: '', category: 'Restaurant', demoUrl: '#', price: 'free' },
-  { title: 'Flavor - Food Blog Template', slug: 'flavor', description: 'Beautiful food blog template with recipe cards and gallery sections.', thumbnail: '', category: 'Blog', demoUrl: '#', price: 'free' },
-  { title: 'Agency - Creative Landing Page', slug: 'agency-landing', description: 'One-page agency template with smooth animations and portfolio grid.', thumbnail: '', category: 'Agency', demoUrl: '#', price: 'free' },
-];
-
-const fallbackPremiumTemplates = [
-  { title: 'CryptoNexus - Crypto Landing Page', slug: 'cryptonexus', description: 'Modern cryptocurrency landing page with animated charts, ICO countdown, and dark futuristic design.', thumbnail: '', category: 'Crypto', demoUrl: '#', price: '$29' },
-  { title: 'Savoria - Restaurant Template', slug: 'savoria', description: 'Elegant restaurant website with menu sections, reservations, and beautiful food galleries.', thumbnail: '', category: 'Restaurant', demoUrl: '#', price: '$24' },
-  { title: 'Nexus Agency - Creative Portfolio', slug: 'nexus-agency', description: 'One-page agency template with smooth animations, portfolio grid, and modern glassmorphism design.', thumbnail: '', category: 'Agency', demoUrl: '#', price: '$19' },
-  { title: 'EduPro - Online Learning Platform', slug: 'edupro', description: 'Complete education website template with course listings, instructor profiles, and learning management features.', thumbnail: '', category: 'Education', demoUrl: '#', price: '$34' },
-];
-
-const fallbackPosts = [
-  { title: '25 Best Free Bootstrap Templates 2025', slug: 'best-bootstrap-templates-2025', excerpt: 'A curated collection of the best free Bootstrap templates for your next web project.', thumbnail: '', category: 'Resources', publishedAt: '2025-02-05', readTime: '10 min' },
-  { title: 'How to Choose the Right Template', slug: 'how-to-choose-template', excerpt: 'Tips and guidelines for selecting the perfect template for your website.', thumbnail: '', category: 'Tips', publishedAt: '2025-02-01', readTime: '7 min' },
-  { title: 'CSS Grid Layout: A Complete Guide', slug: 'css-grid-guide', excerpt: 'Learn everything you need to know about CSS Grid layout for modern websites.', thumbnail: '', category: 'Tutorial', publishedAt: '2025-01-28', readTime: '12 min' },
-];
 
 const categories = [
   { name: 'Business', count: 45 },
@@ -116,13 +94,13 @@ export default async function HomePage() {
       getLatestBlogPosts(3),
     ]);
 
-    freeTemplates = sanityFree?.length > 0 ? sanityFree.map(mapTemplate) : fallbackFreeTemplates;
-    premiumTemplates = sanityPremium?.length > 0 ? sanityPremium.map(mapTemplate) : fallbackPremiumTemplates;
-    latestPosts = sanityPosts?.length > 0 ? sanityPosts.map(mapPost) : fallbackPosts;
+    freeTemplates = sanityFree?.length > 0 ? sanityFree.map(mapTemplate) : [];
+    premiumTemplates = sanityPremium?.length > 0 ? sanityPremium.map(mapTemplate) : [];
+    latestPosts = sanityPosts?.length > 0 ? sanityPosts.map(mapPost) : [];
   } catch {
-    freeTemplates = fallbackFreeTemplates;
-    premiumTemplates = fallbackPremiumTemplates;
-    latestPosts = fallbackPosts;
+    freeTemplates = [];
+    premiumTemplates = [];
+    latestPosts = [];
   }
 
   return (
@@ -174,11 +152,17 @@ export default async function HomePage() {
             <p>Download our best free templates. No sign-up, no payment — just free.</p>
           </div>
 
-          <div className="grid grid-3">
-            {freeTemplates.map((template: Record<string, unknown>) => (
-              <TemplateCard key={template.slug as string} {...template as { title: string; slug: string; description: string; thumbnail: string; category: string; demoUrl?: string; price?: string }} />
-            ))}
-          </div>
+          {freeTemplates.length > 0 ? (
+            <div className="grid grid-3">
+              {freeTemplates.map((template: Record<string, unknown>) => (
+                <TemplateCard key={template.slug as string} {...template as { title: string; slug: string; description: string; thumbnail: string; category: string; demoUrl?: string; price?: string }} />
+              ))}
+            </div>
+          ) : (
+            <div style={{ textAlign: 'center', padding: '3rem 0', gridColumn: '1 / -1' }}>
+              <p>No free templates available yet. Check back soon!</p>
+            </div>
+          )}
 
           <div className={styles.viewAll}>
             <Link href="/free-templates" className="btn btn-primary">
@@ -216,11 +200,17 @@ export default async function HomePage() {
             <p>Take your project to the next level with our premium, feature-rich templates.</p>
           </div>
 
-          <div className="grid grid-3">
-            {premiumTemplates.map((template: Record<string, unknown>) => (
-              <TemplateCard key={template.slug as string} {...template as { title: string; slug: string; description: string; thumbnail: string; category: string; demoUrl?: string; price?: string }} />
-            ))}
-          </div>
+          {premiumTemplates.length > 0 ? (
+            <div className="grid grid-3">
+              {premiumTemplates.map((template: Record<string, unknown>) => (
+                <TemplateCard key={template.slug as string} {...template as { title: string; slug: string; description: string; thumbnail: string; category: string; demoUrl?: string; price?: string }} />
+              ))}
+            </div>
+          ) : (
+            <div style={{ textAlign: 'center', padding: '3rem 0', gridColumn: '1 / -1' }}>
+              <p>No premium templates available right now. Check back soon!</p>
+            </div>
+          )}
 
           <div className={styles.viewAll}>
             <Link href="/templates" className="btn btn-secondary">
@@ -238,11 +228,17 @@ export default async function HomePage() {
             <p>Web design tips, tutorials, and industry insights.</p>
           </div>
 
-          <div className="grid grid-3">
-            {latestPosts.map((post: Record<string, unknown>) => (
-              <BlogCard key={post.slug as string} {...post as { title: string; slug: string; excerpt: string; thumbnail: string; category: string; publishedAt: string; readTime?: string }} />
-            ))}
-          </div>
+          {latestPosts.length > 0 ? (
+            <div className="grid grid-3">
+              {latestPosts.map((post: Record<string, unknown>) => (
+                <BlogCard key={post.slug as string} {...post as { title: string; slug: string; excerpt: string; thumbnail: string; category: string; publishedAt: string; readTime?: string }} />
+              ))}
+            </div>
+          ) : (
+            <div style={{ textAlign: 'center', padding: '3rem 0', gridColumn: '1 / -1' }}>
+              <p>No blog posts published yet. Stay tuned!</p>
+            </div>
+          )}
 
           <div className={styles.viewAll}>
             <Link href="/blog" className="btn btn-secondary">

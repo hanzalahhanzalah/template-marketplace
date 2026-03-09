@@ -12,15 +12,6 @@ export const metadata: Metadata = {
     description: 'Download free responsive website templates. Beautiful, hand-crafted HTML5 templates built with Bootstrap 5, Tailwind CSS, and modern JavaScript.',
 };
 
-// Fallback
-const fallbackTemplates = [
-    { title: 'Developer - Portfolio Template', slug: 'developer-portfolio', description: 'Clean and minimal portfolio template perfect for developers and designers.', thumbnail: '', category: 'Portfolio', demoUrl: '#', price: 'free' },
-    { title: 'BusinessBox - Corporate Template', slug: 'businessbox', description: 'Professional business template with modern design and easy customization.', thumbnail: '', category: 'Business', demoUrl: '#', price: 'free' },
-    { title: 'CryptoLand - Cryptocurrency Template', slug: 'cryptoland', description: 'Modern crypto landing page with ICO countdown and token sale features.', thumbnail: '', category: 'Crypto', demoUrl: '#', price: 'free' },
-    { title: 'FoodHunt - Restaurant Template', slug: 'foodhunt', description: 'Elegant restaurant template with menu sections and reservation form.', thumbnail: '', category: 'Restaurant', demoUrl: '#', price: 'free' },
-    { title: 'Flavor - Food Blog Template', slug: 'flavor', description: 'Beautiful food blog template with recipe cards and gallery sections.', thumbnail: '', category: 'Blog', demoUrl: '#', price: 'free' },
-    { title: 'Agency - Creative Landing Page', slug: 'agency-landing', description: 'One-page agency template with smooth animations and portfolio grid.', thumbnail: '', category: 'Agency', demoUrl: '#', price: 'free' },
-];
 
 function mapTemplate(t: Record<string, unknown>) {
     return {
@@ -55,12 +46,12 @@ export default async function FreeTemplatesPage({
             getFreeTemplates(),
             getCategories('template'),
         ]);
-        allTemplates = sanityTemplates?.length > 0 ? sanityTemplates.map(mapTemplate) : fallbackTemplates;
+        allTemplates = sanityTemplates?.length > 0 ? sanityTemplates.map(mapTemplate) : [];
         if (sanityCategories?.length > 0) {
             categoryNames = ['All', ...sanityCategories.map((c: { title: string }) => c.title)];
         }
     } catch {
-        allTemplates = fallbackTemplates;
+        allTemplates = [];
     }
 
     // Filter templates
