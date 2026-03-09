@@ -3,6 +3,7 @@ import { structureTool } from 'sanity/structure';
 import { visionTool } from '@sanity/vision';
 import { schemaTypes } from './sanity/schemaTypes';
 import { media } from 'sanity-plugin-media';
+import { createDeleteWithAssetsAction } from './sanity/actions/deleteWithAssets';
 
 export default defineConfig({
     name: 'templatelayer',
@@ -21,17 +22,17 @@ export default defineConfig({
 
     document: {
         actions: (prev, context) => {
-            // Reorder actions to make "Delete" more prominent
-            const deleteAction = prev.find((action) => action.action === 'delete');
-            const otherActions = prev.filter((action) => action.action !== 'delete');
+            // Apply our custom delete action only to templates and blog posts
+            // so we don't accidentally delete shared assets on standard documents
+            const typesWithAssetDeletion = ['template', 'post'];
 
-            if (deleteAction) {
-                // Put delete at the end or start depending on preference
-                // Standard order: [Publish, ..., Delete]
-                return [...otherActions, deleteAction];
-            }
-
-            return prev;
+            return prev.map((originalAction) => {
+                // If it's the delete action and we're on a supported type
+                if (originalAction.action === 'delete' && typesWithAssetDeletion.includes(context.schemaType)) {
+                    return createDeleteWithAssetsAction(originalAction);
+                }
+                return originalAction;
+            });
         },
     },
 });
