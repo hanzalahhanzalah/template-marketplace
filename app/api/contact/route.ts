@@ -35,8 +35,8 @@ export async function POST(request: Request) {
             try {
                 console.log('Sending email via Resend to:', process.env.CONTACT_RECIPIENT_EMAIL);
                 const res = await resend.emails.send({
-                    from: 'TemplateForge <onboarding@resend.dev>',
-                    to: process.env.CONTACT_RECIPIENT_EMAIL || 'hello@templateforge.com',
+                    from: 'TemplateLayer <onboarding@resend.dev>',
+                    to: process.env.CONTACT_RECIPIENT_EMAIL || 'hello@templatelayer.com',
                     subject: `New Contact Message: ${subject}`,
                     text: `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\n\nMessage:\n${message}`,
                 });

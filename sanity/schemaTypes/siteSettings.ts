@@ -16,13 +16,13 @@ export default defineType({
             name: 'logoText',
             title: 'Logo Text (First Part)',
             type: 'string',
-            description: 'e.g. "template" in "templateforge"',
+            description: 'e.g. "template" in "templatelayer"',
         }),
         defineField({
             name: 'logoAccent',
             title: 'Logo Text (Accent Part)',
             type: 'string',
-            description: 'e.g. "forge" in "templateforge"',
+            description: 'e.g. "layer" in "templatelayer"',
         }),
         defineField({
             name: 'siteDescription',

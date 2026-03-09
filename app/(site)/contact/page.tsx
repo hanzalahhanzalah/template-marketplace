@@ -4,16 +4,16 @@ import ContactForm from '@/components/ContactForm';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-    title: 'Contact | TemplateForge - Get in Touch',
-    description: 'Have questions about our templates? Get in touch with the TemplateForge team.',
+    title: 'Contact | TemplateLayer - Get in Touch',
+    description: 'Have questions about our templates? Get in touch with the TemplateLayer team.',
 };
 
 const contactMethods = [
     {
         title: 'Email Us',
         description: 'For general inquiries and support',
-        value: 'hello@templateforge.com',
-        link: 'mailto:hello@templateforge.com',
+        value: 'hello@templatelayer.com',
+        link: 'mailto:hello@templatelayer.com',
         icon: (
             <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
                 <rect x="2" y="4" width="20" height="16" rx="2" />
@@ -35,7 +35,7 @@ const contactMethods = [
     {
         title: 'Twitter',
         description: 'Follow us for updates',
-        value: '@templateforge',
+        value: '@templatelayer',
         link: '#',
         icon: (
             <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "../(site)/globals.css";
 
 export const metadata: Metadata = {
-    title: "Template Preview | TemplateForge",
+    title: "Template Preview | TemplateLayer",
     description: "Live preview of our premium website templates.",
 };
 

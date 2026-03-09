@@ -12,7 +12,7 @@ interface SiteSettings {
 
 export default function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [settings, setSettings] = useState<SiteSettings>({ logoText: 'template', logoAccent: 'forge' });
+    const [settings, setSettings] = useState<SiteSettings>({ logoText: 'template', logoAccent: 'layer' });
 
     useEffect(() => {
         async function fetchSettings() {

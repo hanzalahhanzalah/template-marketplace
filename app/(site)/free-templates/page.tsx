@@ -8,7 +8,7 @@ import styles from './page.module.css';
 export const revalidate = 60; // Revalidate every 60 seconds
 
 export const metadata: Metadata = {
-    title: 'Free Templates | TemplateForge - Download Free HTML, CSS & JS Templates',
+    title: 'Free Templates | TemplateLayer - Download Free HTML, CSS & JS Templates',
     description: 'Download free responsive website templates. Beautiful, hand-crafted HTML5 templates built with Bootstrap 5, Tailwind CSS, and modern JavaScript.',
 };
 

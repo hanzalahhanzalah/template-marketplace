@@ -3,8 +3,8 @@ import Link from 'next/link';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-    title: 'About | TemplateForge - Premium Website Templates',
-    description: 'Learn about TemplateForge - we create premium, hand-crafted website templates for modern web projects.',
+    title: 'About | TemplateLayer - Premium Website Templates',
+    description: 'Learn about TemplateLayer - we create premium, hand-crafted website templates for modern web projects.',
 };
 
 const values = [
@@ -59,7 +59,7 @@ export default function AboutPage() {
             {/* Hero */}
             <section className={styles.hero}>
                 <div className="container">
-                    <h1>About TemplateForge</h1>
+                    <h1>About TemplateLayer</h1>
                     <p>We create premium, hand-crafted website templates that help developers and businesses build beautiful websites faster.</p>
                 </div>
             </section>
@@ -70,7 +70,7 @@ export default function AboutPage() {
                     <div className={styles.storyGrid}>
                         <div className={styles.storyText}>
                             <h2>Our Story</h2>
-                            <p>TemplateForge was born from a simple idea: website templates should be beautiful, fast, and accessible to everyone.</p>
+                            <p>TemplateLayer was born from a simple idea: website templates should be beautiful, fast, and accessible to everyone.</p>
                             <p>We noticed that many templates on the market were either visually outdated, poorly coded, or lacked the attention to detail that professional projects require. So we set out to change that.</p>
                             <p>Today, we create hand-crafted templates that combine stunning design with clean, well-documented code. Every template goes through rigorous testing to ensure it meets our high standards for performance, accessibility, and visual appeal.</p>
                         </div>

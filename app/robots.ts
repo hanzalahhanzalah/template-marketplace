@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: '/api/',
         },
-        sitemap: 'https://templateforge.com/sitemap.xml',
+        sitemap: 'https://templatelayer.com/sitemap.xml',
     };
 }

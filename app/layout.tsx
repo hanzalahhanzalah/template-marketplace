@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "TemplateForge",
+    title: "TemplateLayer",
     description: "Template Marketplace",
 };
 

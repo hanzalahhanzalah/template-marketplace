@@ -107,7 +107,7 @@ export default function PreviewPage() {
                 <div className={`${styles.iframeWrapper} ${styles[viewMode]}`}>
                     {/* Watermark Overlay */}
                     <div className={styles.watermark}>
-                        <span className={styles.watermarkText}>TEMPLATEFORGE</span>
+                        <span className={styles.watermarkText}>TEMPLATELAYER</span>
                     </div>
 
                     <iframe

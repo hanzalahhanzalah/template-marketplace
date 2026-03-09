@@ -7,7 +7,7 @@ import styles from './page.module.css';
 export const revalidate = 60; // Revalidate every 60 seconds (Standard for SEO & Speed)
 
 export const metadata: Metadata = {
-    title: 'Blog | TemplateForge - Web Design Tips & Tutorials',
+    title: 'Blog | TemplateLayer - Web Design Tips & Tutorials',
     description: 'Learn web design tips, development tutorials, and industry insights. Stay updated with the latest trends in HTML, CSS, and JavaScript.',
 };
 

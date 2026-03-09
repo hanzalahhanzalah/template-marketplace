@@ -66,7 +66,7 @@ const trustPoints = [
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await getSiteSettings().catch(() => null);
-  const siteName = settings?.siteName || 'TemplateForge';
+  const siteName = settings?.siteName || 'TemplateLayer';
 
   return {
     title: `${siteName} — Free & Premium Website Templates`,

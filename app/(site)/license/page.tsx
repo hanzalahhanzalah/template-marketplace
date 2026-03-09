@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-    title: 'License | TemplateForge - Usage Terms & Guidelines',
+    title: 'License | TemplateLayer - Usage Terms & Guidelines',
     description: 'Understand the licensing terms for our premium and free website templates. Learn how you can use our products for your projects.',
 };
 
@@ -27,7 +27,7 @@ export default function LicensePage() {
                         What You Can Do
                     </h2>
                     <p>
-                        Every template at TemplateForge comes with a flexible license that allows for professional use. When you purchase a template or download a free one, you are granted a non-exclusive license to use the product.
+                        Every template at TemplateLayer comes with a flexible license that allows for professional use. When you purchase a template or download a free one, you are granted a non-exclusive license to use the product.
                     </p>
                     <ul className={styles.list}>
                         <li className={styles.listItem}>
@@ -79,7 +79,7 @@ export default function LicensePage() {
                             <svg width="18" height="18" fill="none" stroke="#ef4444" strokeWidth="2" viewBox="0 0 24 24">
                                 <path d="M6 18L18 6M6 6l12 12" />
                             </svg>
-                            You cannot use the brand name "TemplateForge" to promote your own services.
+                            You cannot use the brand name "TemplateLayer" to promote your own services.
                         </li>
                     </ul>
                 </section>
@@ -93,7 +93,7 @@ export default function LicensePage() {
                         Attribution
                     </h2>
                     <p>
-                        For <strong>Premium Templates</strong>, attribution is not required. You can remove all "TemplateForge" links and branding from your final website.
+                        For <strong>Premium Templates</strong>, attribution is not required. You can remove all "TemplateLayer" links and branding from your final website.
                     </p>
                     <p>
                         For <strong>Free Templates</strong>, we ask that you keep the small credit link in the footer as a way to support our community.
@@ -103,7 +103,7 @@ export default function LicensePage() {
                 {/* Disclaimer */}
                 <section className={styles.important}>
                     <p>
-                        <strong>Disclaimer:</strong> All templates are provided "as is" without warranty of any kind. TemplateForge is not liable for any damages resulting from the use or inability to use our products.
+                        <strong>Disclaimer:</strong> All templates are provided "as is" without warranty of any kind. TemplateLayer is not liable for any damages resulting from the use or inability to use our products.
                     </p>
                 </section>
             </div>

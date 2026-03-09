@@ -22,9 +22,9 @@ export default function Footer() {
     const currentYear = new Date().getFullYear();
     const [settings, setSettings] = useState<SiteSettings>({
         logoText: 'template',
-        logoAccent: 'forge',
+        logoAccent: 'layer',
         footerDescription: 'Free website templates for your next project. Clean, modern, and easy to customize.',
-        siteName: 'TemplateForge',
+        siteName: 'TemplateLayer',
         socialLinks: null,
     });
 
@@ -39,9 +39,9 @@ export default function Footer() {
                 if (data) {
                     setSettings({
                         logoText: data.logoText || 'template',
-                        logoAccent: data.logoAccent || 'forge',
+                        logoAccent: data.logoAccent || 'layer',
                         footerDescription: data.footerDescription || settings.footerDescription,
-                        siteName: data.siteName || 'TemplateForge',
+                        siteName: data.siteName || 'TemplateLayer',
                         socialLinks: data.socialLinks || null,
                     });
                 }

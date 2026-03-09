@@ -29,7 +29,7 @@ Google loves websites that load fast and work well. Our templates are built with
 ## Conclusion
 Your wedding is a once-in-a-lifetime event. You deserve a website that looks as beautiful as your ceremony without the stress of building it from scratch. 
 
-Ready to start? Check out our latest **[Wedding Templates](https://template-marketplace-livid.vercel.app/templates)** and find the one that matches your style!
+Ready to start? Check out our latest **[Wedding Templates](https://templatelayer.com/templates)** and find the one that matches your style!
 
 ---
 
