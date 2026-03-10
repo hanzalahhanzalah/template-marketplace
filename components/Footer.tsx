@@ -90,15 +90,9 @@ export default function Footer() {
 
                     {/* Contact */}
                     <div className={styles.linkGroup}>
-                        <h4>Contact</h4>
+                        <h4>Email Us</h4>
                         <nav>
                             <a href="mailto:info@templatelayer.com">info@templatelayer.com</a>
-                            {settings.socialLinks?.twitter && (
-                                <a href={settings.socialLinks.twitter} target="_blank" rel="noopener noreferrer">Twitter / X</a>
-                            )}
-                            {settings.socialLinks?.github && (
-                                <a href={settings.socialLinks.github} target="_blank" rel="noopener noreferrer">GitHub</a>
-                            )}
                         </nav>
                     </div>
 

@@ -71,28 +71,6 @@ export default async function ContactPage() {
                 </div>
             </section>
 
-            {/* Contact Methods */}
-            <section className={styles.methods}>
-                <div className="container">
-                    <div className={styles.methodsGrid}>
-                        {contactMethods.map((method) => (
-                            <a
-                                key={method.title}
-                                href={method.link}
-                                className={styles.methodCard}
-                            >
-                                <div className={styles.methodIcon}>{method.icon}</div>
-                                <div className={styles.methodInfo}>
-                                    <h3>{method.title}</h3>
-                                    <p>{method.description}</p>
-                                    <span className={styles.methodValue}>{method.value}</span>
-                                </div>
-                            </a>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
             {/* Contact Form */}
             <section className={styles.formSection}>
                 <div className="container">
