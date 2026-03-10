@@ -10,14 +10,6 @@ import styles from './page.module.css';
 export const revalidate = 60; // Revalidate every 60 seconds
 
 
-const categories = [
-  { name: 'Business', count: 45 },
-  { name: 'Portfolio', count: 32 },
-  { name: 'E-Commerce', count: 28 },
-  { name: 'Blog', count: 24 },
-  { name: 'Restaurant', count: 18 },
-  { name: 'Agency', count: 15 },
-];
 
 const trustPoints = [
   {
@@ -85,22 +77,25 @@ function mapPost(p: Record<string, unknown>) {
 
 export default async function HomePage() {
   // Fetch from Sanity, fallback to demo data
-  let freeTemplates, premiumTemplates, latestPosts;
+  let freeTemplates, premiumTemplates, latestPosts, sanityCategories;
 
   try {
-    const [sanityFree, sanityPremium, sanityPosts] = await Promise.all([
+    const [sanityFree, sanityPremium, sanityPosts, categoriesData] = await Promise.all([
       getFeaturedFreeTemplates(6),
       getFeaturedPremiumTemplates(4),
       getLatestBlogPosts(3),
+      getCategories('template'),
     ]);
 
     freeTemplates = sanityFree?.length > 0 ? sanityFree.map(mapTemplate) : [];
     premiumTemplates = sanityPremium?.length > 0 ? sanityPremium.map(mapTemplate) : [];
     latestPosts = sanityPosts?.length > 0 ? sanityPosts.map(mapPost) : [];
+    sanityCategories = categoriesData;
   } catch {
     freeTemplates = [];
     premiumTemplates = [];
     latestPosts = [];
+    sanityCategories = [];
   }
 
   return (
@@ -127,22 +122,23 @@ export default async function HomePage() {
       </section>
 
       {/* Categories */}
-      <section className={styles.categories}>
-        <div className="container">
-          <div className={styles.categoryList}>
-            {categories.map((cat) => (
-              <Link
-                key={cat.name}
-                href={`/templates?category=${cat.name.toLowerCase()}`}
-                className={styles.categoryItem}
-              >
-                {cat.name}
-                <span>({cat.count})</span>
-              </Link>
-            ))}
+      {sanityCategories?.length > 0 && (
+        <section className={styles.categories}>
+          <div className="container">
+            <div className={styles.categoryList}>
+              {sanityCategories.map((cat: any) => (
+                <Link
+                  key={cat.title}
+                  href={`/templates?category=${cat.title.toLowerCase()}`}
+                  className={styles.categoryItem}
+                >
+                  {cat.title}
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Popular Free Templates — THE HOOK */}
       <section className={`section ${styles.templates}`}>
