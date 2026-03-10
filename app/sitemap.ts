@@ -1,84 +1,56 @@
 import type { MetadataRoute } from 'next';
+import { getAllTemplateSlugs, getAllBlogSlugs } from '@/sanity/lib/queries';
 
-export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://templatelayer.com';
+const BASE_URL = 'https://templatelayer.com';
+
+// Regenerate the sitemap on every request in production
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+    const now = new Date();
 
     // Static pages
     const staticPages: MetadataRoute.Sitemap = [
-        {
-            url: baseUrl,
-            lastModified: new Date(),
-            changeFrequency: 'daily',
-            priority: 1,
-        },
-        {
-            url: `${baseUrl}/free-templates`,
-            lastModified: new Date(),
-            changeFrequency: 'daily',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/templates`,
-            lastModified: new Date(),
-            changeFrequency: 'daily',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/blog`,
-            lastModified: new Date(),
-            changeFrequency: 'daily',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/about`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.5,
-        },
-        {
-            url: `${baseUrl}/contact`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.5,
-        },
+        { url: BASE_URL, lastModified: now, changeFrequency: 'daily', priority: 1.0 },
+        { url: `${BASE_URL}/free-templates`, lastModified: now, changeFrequency: 'daily', priority: 0.9 },
+        { url: `${BASE_URL}/templates`, lastModified: now, changeFrequency: 'daily', priority: 0.9 },
+        { url: `${BASE_URL}/blog`, lastModified: now, changeFrequency: 'daily', priority: 0.8 },
+        { url: `${BASE_URL}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
+        { url: `${BASE_URL}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     ];
 
-    // Template detail pages (will be dynamic from Sanity later)
-    const templateSlugs = [
-        'developer-portfolio',
-        'businessbox',
-        'cryptoland',
-        'foodhunt',
-        'flavor',
-        'agency-landing',
-        'cryptonexus',
-        'savoria',
-        'nexus-agency',
-        'edupro',
-        'zoner',
-        'saasify',
-    ];
+    // Dynamic template pages — fetched from Sanity
+    let templatePages: MetadataRoute.Sitemap = [];
+    try {
+        const slugs: { slug: string }[] = await getAllTemplateSlugs();
+        templatePages = (slugs || [])
+            .filter((s) => s.slug)
+            .map((s) => ({
+                url: `${BASE_URL}/templates/${s.slug}`,
+                lastModified: now,
+                changeFrequency: 'weekly' as const,
+                priority: 0.8,
+            }));
+    } catch {
+        // Sanity unavailable at build time — silently skip
+    }
 
-    const templatePages: MetadataRoute.Sitemap = templateSlugs.map((slug) => ({
-        url: `${baseUrl}/templates/${slug}`,
-        lastModified: new Date(),
-        changeFrequency: 'weekly' as const,
-        priority: 0.7,
-    }));
-
-    // Blog post pages
-    const blogSlugs = [
-        'best-bootstrap-templates-2025',
-        'how-to-choose-template',
-        'css-grid-guide',
-    ];
-
-    const blogPages: MetadataRoute.Sitemap = blogSlugs.map((slug) => ({
-        url: `${baseUrl}/blog/${slug}`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly' as const,
-        priority: 0.6,
-    }));
+    // Dynamic blog pages — fetched from Sanity
+    let blogPages: MetadataRoute.Sitemap = [];
+    try {
+        const slugs: { slug: string }[] = await getAllBlogSlugs();
+        blogPages = (slugs || [])
+            .filter((s) => s.slug)
+            .map((s) => ({
+                url: `${BASE_URL}/blog/${s.slug}`,
+                lastModified: now,
+                changeFrequency: 'monthly' as const,
+                priority: 0.7,
+            }));
+    } catch {
+        // Sanity unavailable at build time — silently skip
+    }
 
     return [...staticPages, ...templatePages, ...blogPages];
 }

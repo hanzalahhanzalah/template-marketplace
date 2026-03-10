@@ -80,6 +80,9 @@ export async function getTemplateBySlug(slug: string) {
       title,
       "slug": slug.current,
       description,
+      seoTitle,
+      seoDescription,
+      metaImage,
       thumbnail,
       "category": category->title,
       demoUrl,
@@ -142,6 +145,7 @@ export async function getBlogPostBySlug(slug: string) {
       excerpt,
       body,
       thumbnail,
+      metaImage,
       "category": category->title,
       publishedAt,
       readTime,
@@ -154,7 +158,7 @@ export async function getBlogPostBySlug(slug: string) {
 
 export async function getAllBlogSlugs() {
   return client.fetch(`
-    *[_type == "blogPost"] { "slug": slug.current }
+    *[_type == "blogPost"] { "slug": slug.current, publishedAt }
   `);
 }
 
