@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import styles from './Header.module.css';
 import { client } from '@/sanity/lib/client';
@@ -13,6 +14,12 @@ interface SiteSettings {
 export default function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [settings, setSettings] = useState<SiteSettings>({ logoText: 'template', logoAccent: 'layer' });
+    const pathname = usePathname();
+
+    // Auto-close mobile menu on route change
+    useEffect(() => {
+        setIsMobileMenuOpen(false);
+    }, [pathname]);
 
     useEffect(() => {
         async function fetchSettings() {

@@ -58,7 +58,7 @@ export default function ContactForm() {
 
             <div className={styles.formGroup}>
                 <label htmlFor="subject">Subject</label>
-                <select name="subject" id="subject" required defaultValue="" disabled={status === 'loading'}>
+                <select name="subject" id="subject" required defaultValue="general" disabled={status === 'loading'}>
                     <option value="" disabled>Select a topic</option>
                     <option value="general">General Inquiry</option>
                     <option value="support">Technical Support</option>

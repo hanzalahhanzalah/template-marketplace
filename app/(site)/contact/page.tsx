@@ -30,7 +30,7 @@ export default async function ContactPage() {
             <section className={styles.hero}>
                 <div className="container">
                     <h1>Get in Touch</h1>
-                    <p>Have questions about our templates? Reach out via the form below or email us at **info@templatelayer.com**.</p>
+                    <p>Have questions about our templates? Reach out via the form below or email us at <a href="mailto:info@templatelayer.com">info@templatelayer.com</a>.</p>
                 </div>
             </section>
 
