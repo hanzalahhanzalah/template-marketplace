@@ -1,4 +1,8 @@
-import { client } from './client';
+import { serverClient } from './client';
+
+// Use serverClient (no CDN, authenticated) for all server-side fetches
+const client = serverClient;
+
 
 // ============================
 // TEMPLATES
