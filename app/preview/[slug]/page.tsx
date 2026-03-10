@@ -6,9 +6,25 @@ import { useParams } from 'next/navigation';
 import { getTemplateBySlug } from '@/sanity/lib/queries';
 import styles from './page.module.css';
 
+interface Template {
+    title: string;
+    slug: string;
+    description: string;
+    thumbnail?: any;
+    category?: string;
+    demoUrl?: string;
+    demoZipUrl?: string;
+    downloadUrl?: string;
+    pricingType: 'free' | 'premium';
+    price?: string;
+    buyLinks?: { label: string; url: string }[];
+    technologies?: string[];
+    features?: string[];
+}
+
 export default function PreviewPage() {
     const { slug } = useParams();
-    const [template, setTemplate] = useState<any>(null);
+    const [template, setTemplate] = useState<Template | null>(null);
     const [viewMode, setViewMode] = useState<'desktop' | 'tablet' | 'mobile'>('desktop');
     const [loading, setLoading] = useState(true);
 

@@ -2,8 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import TemplateCard from '@/components/TemplateCard';
 import BlogCard from '@/components/BlogCard';
-import { getFeaturedFreeTemplates, getFeaturedPremiumTemplates } from '@/sanity/lib/queries';
-import { getLatestBlogPosts, getSiteSettings } from '@/sanity/lib/queries';
+import { getFeaturedFreeTemplates, getFeaturedPremiumTemplates, getLatestBlogPosts, getSiteSettings, getCategories } from '@/sanity/lib/queries';
 import { urlFor } from '@/sanity/lib/client';
 import styles from './page.module.css';
 
@@ -75,6 +74,11 @@ function mapPost(p: Record<string, unknown>) {
   };
 }
 
+interface Category {
+  title: string;
+  slug: string;
+}
+
 export default async function HomePage() {
   // Fetch from Sanity, fallback to demo data
   let freeTemplates, premiumTemplates, latestPosts, sanityCategories;
@@ -126,7 +130,7 @@ export default async function HomePage() {
         <section className={styles.categories}>
           <div className="container">
             <div className={styles.categoryList}>
-              {sanityCategories.map((cat: any) => (
+              {sanityCategories.map((cat: Category) => (
                 <Link
                   key={cat.title}
                   href={`/templates?category=${cat.title.toLowerCase()}`}
