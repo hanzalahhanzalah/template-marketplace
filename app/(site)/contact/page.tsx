@@ -12,8 +12,8 @@ const contactMethods = [
     {
         title: 'Email Us',
         description: 'For general inquiries and support',
-        value: 'hello@templatelayer.com',
-        link: 'mailto:hello@templatelayer.com',
+        value: 'info@templatelayer.com',
+        link: 'mailto:info@templatelayer.com',
         icon: (
             <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
                 <rect x="2" y="4" width="20" height="16" rx="2" />
@@ -68,6 +68,28 @@ export default async function ContactPage() {
                 <div className="container">
                     <h1>Get in Touch</h1>
                     <p>Have questions about our templates? We&apos;d love to hear from you.</p>
+                </div>
+            </section>
+
+            {/* Contact Methods */}
+            <section className={styles.methods}>
+                <div className="container">
+                    <div className={styles.methodsGrid}>
+                        {contactMethods.map((method) => (
+                            <a
+                                key={method.title}
+                                href={method.link}
+                                className={styles.methodCard}
+                            >
+                                <div className={styles.methodIcon}>{method.icon}</div>
+                                <div className={styles.methodInfo}>
+                                    <h3>{method.title}</h3>
+                                    <p>{method.description}</p>
+                                    <span className={styles.methodValue}>{method.value}</span>
+                                </div>
+                            </a>
+                        ))}
+                    </div>
                 </div>
             </section>
 
