@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { getTemplateBySlug } from '@/sanity/lib/queries';
+import { urlFor } from '@/sanity/lib/client';
 import styles from './page.module.css';
 
 interface Template {
@@ -65,6 +66,11 @@ export default function PreviewPage() {
         ? `/api/serve-demo/${slug}/index.html`
         : (template.demoUrl || '#');
 
+    // Build thumbnail URL for background
+    const bgThumbnail = template.thumbnail
+        ? urlFor(template.thumbnail).width(1200).url()
+        : null;
+
     return (
         <div className={styles.page}>
             {/* Top Bar */}
@@ -119,7 +125,17 @@ export default function PreviewPage() {
             </header>
 
             {/* Preview Area */}
-            <main className={styles.previewArea}>
+            <main
+                className={styles.previewArea}
+                style={bgThumbnail ? {
+                    backgroundImage: `url('${bgThumbnail}')`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                } : undefined}
+            >
+                {/* Dark overlay for readability */}
+                {bgThumbnail && <div className={styles.bgOverlay} />}
+
                 <div className={`${styles.iframeWrapper} ${styles[viewMode]}`}>
                     {/* Watermark Overlay */}
                     <div className={styles.watermark}>

@@ -34,31 +34,16 @@ export async function GET(
             filePath = 'index.html';
         }
 
-        // 5. Find the file in the ZIP — try multiple strategies
-        const allFiles = Object.keys(zip.files).filter(f => !zip.files[f].dir);
-
+        // 5. Find the file in the ZIP
+        // Some ZIPs have a root folder (e.g. template-name/index.html)
+        // Others have files at the root (index.html)
         let file = zip.file(filePath);
 
         if (!file) {
-            // Strategy 2: detect all root folders in the ZIP and prepend them
-            const rootFolders = [...new Set(
-                allFiles
-                    .filter(f => f.includes('/'))
-                    .map(f => f.split('/')[0])
-            )];
-
-            for (const folder of rootFolders) {
-                const candidate = `${folder}/${filePath}`;
-                const found = zip.file(candidate);
-                if (found) { file = found; break; }
-            }
-        }
-
-        if (!file) {
-            // Strategy 3: match by filename only (last resort)
-            const filename = filePath.split('/').pop() || filePath;
-            const match = allFiles.find(f => f.endsWith('/' + filename) || f === filename);
-            if (match) file = zip.file(match);
+            // Try to find it if it's inside one level of folder
+            const files = Object.keys(zip.files);
+            const firstFolder = files[0].split('/')[0];
+            file = zip.file(`${firstFolder}/${filePath}`);
         }
 
         if (!file) {
@@ -79,8 +64,6 @@ export async function GET(
             'gif': 'image/gif',
             'svg': 'image/svg+xml',
             'json': 'application/json',
-            'ico': 'image/x-icon',
-            'webp': 'image/webp',
             'woff': 'font/woff',
             'woff2': 'font/woff2',
             'ttf': 'font/ttf',
