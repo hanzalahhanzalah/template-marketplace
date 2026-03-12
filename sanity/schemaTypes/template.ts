@@ -113,6 +113,14 @@ export default defineType({
             of: [{ type: 'string' }],
         }),
         defineField({
+            name: 'tags',
+            title: 'Tags / Keywords',
+            type: 'array',
+            of: [{ type: 'string' }],
+            options: { layout: 'tags' },
+            description: 'Add SEO keywords users search for — e.g. "dark theme", "Bootstrap 5", "one-page", "restaurant website". These power search rankings and site filters.',
+        }),
+        defineField({
             name: 'isFeatured',
             title: 'Featured on Homepage?',
             type: 'boolean',
@@ -123,6 +131,28 @@ export default defineType({
             title: 'Display Order',
             type: 'number',
             initialValue: 0,
+        }),
+        // ── SEO Fields ──────────────────────────────────────────────
+        defineField({
+            name: 'seoTitle',
+            title: 'SEO Title',
+            type: 'string',
+            description: 'Custom title for Google/search engines. Leave blank to auto-generate from template title. Max 60 characters.',
+            validation: (rule) => rule.max(60),
+        }),
+        defineField({
+            name: 'seoDescription',
+            title: 'SEO Description',
+            type: 'text',
+            rows: 2,
+            description: 'Custom meta description for Google. Leave blank to use the template description. Max 160 characters.',
+            validation: (rule) => rule.max(160),
+        }),
+        defineField({
+            name: 'metaImage',
+            title: 'Social Share Image (OG Image)',
+            type: 'image',
+            description: 'Optional. If set, this image is used when the template page is shared on Twitter/LinkedIn. Recommended: 1200×630px. Falls back to thumbnail if not set.',
         }),
     ],
     orderings: [

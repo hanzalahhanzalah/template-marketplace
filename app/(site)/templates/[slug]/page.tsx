@@ -42,9 +42,19 @@ export async function generateMetadata({
                 ? urlFor(template.thumbnail).width(1200).height(630).url()
                 : `${BASE_URL}/og-default.png`;
 
+    // Combine tags + technologies + category as keywords
+    const keywordList: string[] = [
+        ...(template.tags || []),
+        ...(template.technologies || []),
+        template.category || '',
+        'website template',
+        'HTML template',
+    ].filter(Boolean);
+
     return {
         title,
         description,
+        keywords: keywordList.join(', '),
         openGraph: {
             title,
             description,
@@ -82,6 +92,11 @@ export default async function TemplateDetailPage({
     const imageUrl = thumbnailUrl || `${BASE_URL}/og-default.png`;
 
     // JSON-LD: Product structured data for Google rich results
+    const allKeywords = [
+        ...(template.tags || []),
+        ...(template.technologies || []),
+    ].filter(Boolean).join(', ');
+
     const jsonLd = {
         '@context': 'https://schema.org',
         '@type': 'Product',
@@ -89,6 +104,7 @@ export default async function TemplateDetailPage({
         description: template.description,
         image: imageUrl,
         url: `${BASE_URL}/templates/${slug}`,
+        keywords: allKeywords || undefined,
         brand: {
             '@type': 'Brand',
             name: 'TemplateLayer',

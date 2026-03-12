@@ -87,6 +87,7 @@ export async function getTemplateBySlug(slug: string) {
       seoTitle,
       seoDescription,
       metaImage,
+      tags,
       thumbnail,
       "category": category->title,
       demoUrl,
@@ -101,6 +102,7 @@ export async function getTemplateBySlug(slug: string) {
     }
   `, { slug });
 }
+
 
 export async function getAllTemplateSlugs() {
   return client.fetch(`
