@@ -28,9 +28,7 @@ export default function TemplateCard({
             {/* Thumbnail with browser mockup */}
             <Link href={`/templates/${slug}`} className={styles.imageWrapper}>
                 {/* Price Badge */}
-                <span className={`${styles.badge} ${isFree ? styles.badgeFree : styles.badgePremium}`}>
-                    {isFree ? 'FREE' : price}
-                </span>
+{/* Price badge hidden temporarily */}
 
                 <BrowserMockup src={thumbnail} alt={title} title={`${slug}.com`} />
             </Link>
