@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useParams, useSearchParams } from 'next/navigation';
 import { getTemplateBySlug } from '@/sanity/lib/queries';
-import { urlFor } from '@/sanity/lib/client';
 import styles from './page.module.css';
 
 interface BundleItem {
@@ -87,9 +86,6 @@ export default function PreviewPage() {
 
     // --- BUNDLE MODE: show selector if no sub selected ---
     if (isBundle && !activeSub) {
-        const bgThumbnail = template.thumbnail
-            ? urlFor(template.thumbnail).width(1600).url()
-            : null;
 
         return (
             <div className={styles.page}>
@@ -110,15 +106,7 @@ export default function PreviewPage() {
                 </header>
 
                 {/* Bundle Selector Landing */}
-                <main
-                    className={styles.bundleLanding}
-                    style={bgThumbnail ? {
-                        backgroundImage: `url('${bgThumbnail}')`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center top',
-                    } : undefined}
-                >
-                    {bgThumbnail && <div className={styles.bgOverlay} />}
+                <main className={styles.bundleLanding}>
 
                     <div className={styles.bundleLandingInner}>
                         <div className={styles.bundleHeader}>
@@ -162,10 +150,6 @@ export default function PreviewPage() {
     } else {
         demoUrl = template.demoUrl || '#';
     }
-
-    const bgThumbnail = template.thumbnail
-        ? urlFor(template.thumbnail).width(1200).url()
-        : null;
 
     // Which label to show in the header
     const activeLabel = isBundle && activeSub
@@ -247,16 +231,7 @@ export default function PreviewPage() {
             </header>
 
             {/* Preview Area */}
-            <main
-                className={styles.previewArea}
-                style={bgThumbnail ? {
-                    backgroundImage: `url('${bgThumbnail}')`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                } : undefined}
-            >
-                {bgThumbnail && <div className={styles.bgOverlay} />}
-
+            <main className={styles.previewArea}>
                 <div className={`${styles.iframeWrapper} ${isBundle ? styles.desktop : styles[viewMode]}`}>
                     {/* Watermark */}
                     <div className={styles.watermark}>
