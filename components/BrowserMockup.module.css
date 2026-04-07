@@ -94,8 +94,7 @@
 
 /* Hover Effect: Stronger Scroll triggered by container hover */
 .browserContainer:hover .imageWrapper {
-    transform: translateY(-30%);
-    /* More dramatic scroll */
+    /* Removed upward scroll animation as requested */
 }
 
 .placeholder {

@@ -160,9 +160,6 @@ export default async function HomePage() {
       <section className={styles.hero}>
         <div className="container">
           <div className={styles.heroContent}>
-            <div className={styles.heroBadge}>
-              <span>✨</span> {totalCount}+ Professional Templates
-            </div>
             <h1>Professional Website Templates</h1>
             <p>
               Download free and premium responsive HTML5/CSS3 website templates.
@@ -175,22 +172,6 @@ export default async function HomePage() {
               <Link href="/free-templates" className="btn btn-secondary">
                 Free Templates
               </Link>
-            </div>
-            <div className={styles.heroStats}>
-              <div className={styles.heroStat}>
-                <strong>{totalCount}+</strong>
-                <span>Templates</span>
-              </div>
-              <div className={styles.heroStatDivider} />
-              <div className={styles.heroStat}>
-                <strong>{sanityCategories.length}+</strong>
-                <span>Categories</span>
-              </div>
-              <div className={styles.heroStatDivider} />
-              <div className={styles.heroStat}>
-                <strong>100%</strong>
-                <span>Responsive</span>
-              </div>
             </div>
           </div>
         </div>
