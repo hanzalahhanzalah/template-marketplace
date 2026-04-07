@@ -89,6 +89,7 @@ function mapTemplate(t: Record<string, unknown>) {
     slug: t.slug as string,
     description: t.description as string,
     thumbnail: t.thumbnail ? urlFor(t.thumbnail).width(1000).height(625).quality(90).auto('format').url() : '',
+    gallery: (t.gallery as string[]) || [],
     category: t.category as string,
     demoUrl: (t.demoUrl as string) || '#',
     price: t.pricingType === 'free' ? 'free' : (t.price as string) || 'premium',

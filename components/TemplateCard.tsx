@@ -10,6 +10,7 @@ interface TemplateCardProps {
     category: string;
     demoUrl?: string;
     price?: string;
+    gallery?: string[];
 }
 
 export default function TemplateCard({
@@ -17,6 +18,7 @@ export default function TemplateCard({
     slug,
     description,
     thumbnail,
+    gallery = [],
     category,
     demoUrl = '#',
     price,
@@ -30,7 +32,7 @@ export default function TemplateCard({
                 {/* Price Badge */}
 {/* Price badge hidden temporarily */}
 
-                <BrowserMockup src={thumbnail} alt={title} title={`${slug}.com`} />
+                <BrowserMockup src={thumbnail} alt={title} title={`${slug}.com`} gallery={gallery} />
             </Link>
 
             {/* Content */}

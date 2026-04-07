@@ -1,6 +1,9 @@
 'use client';
 
+import { useState, useRef, useEffect, useCallback } from 'react';
 import Image from 'next/image';
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
 import styles from './BrowserMockup.module.css';
 
 interface BrowserMockupProps {
@@ -8,11 +11,94 @@ interface BrowserMockupProps {
     alt: string;
     title?: string;
     priority?: boolean;
+    gallery?: string[];
 }
 
-export default function BrowserMockup({ src, alt, title, priority = false }: BrowserMockupProps) {
+function BrowserCarousel({ images, alt, priority, isHovered }: { images: string[]; alt: string; priority: boolean; isHovered: boolean }) {
+    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start' }, [
+        Autoplay({ delay: 2500, stopOnInteraction: false, stopOnMouseEnter: false, playOnInit: false })
+    ]);
+
+    useEffect(() => {
+        if (!emblaApi) return;
+        const autoplay = emblaApi.plugins().autoplay;
+        if (!autoplay) return;
+
+        if (isHovered) {
+            autoplay.play();
+        } else {
+            autoplay.stop();
+        }
+    }, [emblaApi, isHovered]);
+
     return (
-        <div className={styles.browserContainer}>
+        <div className={styles.embla} ref={emblaRef}>
+            <div className={styles.emblaContainer}>
+                {images.map((imgSrc, index) => (
+                    <div className={styles.emblaSlide} key={imgSrc + index}>
+                        <div className={styles.imageWrapper}>
+                            <Image
+                                src={imgSrc}
+                                alt={`${alt} - view ${index + 1}`}
+                                fill
+                                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                className={styles.image}
+                                priority={priority && index === 0}
+                                loading={priority && index === 0 ? "eager" : "lazy"}
+                            />
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+}
+
+export default function BrowserMockup({ src, alt, title, priority = false, gallery = [] }: BrowserMockupProps) {
+    const [isHovered, setIsHovered] = useState(false);
+    const [hasHoveredOnce, setHasHoveredOnce] = useState(false);
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    // Deduplicate images and filter out empties
+    const allImages = Array.from(new Set([src, ...(gallery || [])].filter(Boolean)));
+    const hasMultipleImages = allImages.length > 1;
+
+    // Use Intersection Observer for Mobile Devices (Fallback lazy initialization)
+    useEffect(() => {
+        if (!hasMultipleImages || hasHoveredOnce) return;
+        
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                // If the device doesn't support hover (mobile), init immediately
+                if (window.matchMedia('(hover: none)').matches) {
+                    setHasHoveredOnce(true);
+                }
+            }
+        });
+
+        if (containerRef.current) {
+            observer.observe(containerRef.current);
+        }
+
+        return () => observer.disconnect();
+    }, [hasMultipleImages, hasHoveredOnce]);
+
+    const handleMouseEnter = () => {
+        setIsHovered(true);
+        setHasHoveredOnce(true);
+    };
+
+    const handleMouseLeave = () => {
+        setIsHovered(false);
+    };
+
+    return (
+        <div 
+            className={styles.browserContainer}
+            ref={containerRef}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+        >
             {/* Browser Header */}
             <div className={styles.browserHeader}>
                 <div className={styles.windowControls}>
@@ -34,17 +120,21 @@ export default function BrowserMockup({ src, alt, title, priority = false }: Bro
 
             {/* Browser Body / Image */}
             <div className={styles.browserBody}>
-                {src ? (
-                    <div className={styles.imageWrapper}>
-                        <Image
-                            src={src}
-                            alt={alt}
-                            fill
-                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                            className={styles.image}
-                            priority={priority}
-                        />
-                    </div>
+                {allImages.length > 0 ? (
+                    hasMultipleImages && hasHoveredOnce ? (
+                        <BrowserCarousel images={allImages} alt={alt} priority={priority} isHovered={isHovered} />
+                    ) : (
+                        <div className={styles.imageWrapper}>
+                            <Image
+                                src={allImages[0]}
+                                alt={alt}
+                                fill
+                                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                className={styles.image}
+                                priority={priority}
+                            />
+                        </div>
+                    )
                 ) : (
                     <div className={styles.placeholder}>
                         <span>Preview coming soon</span>

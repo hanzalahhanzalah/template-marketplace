@@ -19,6 +19,7 @@ function mapTemplate(t: Record<string, unknown>) {
         slug: t.slug as string,
         description: t.description as string,
         thumbnail: t.thumbnail ? urlFor(t.thumbnail).width(1000).height(625).quality(90).auto('format').url() : '',
+        gallery: (t.gallery as string[]) || [],
         category: t.category as string,
         demoUrl: (t.demoUrl as string) || '#',
         price: 'free' as string,
@@ -34,7 +35,7 @@ export default async function FreeTemplatesPage({
 }: {
     searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
-    let allTemplates: { title: string; slug: string; description: string; thumbnail: string; category: string; demoUrl: string; price: string }[];
+    let allTemplates: { title: string; slug: string; description: string; thumbnail: string; gallery?: string[]; category: string; demoUrl: string; price: string }[];
     let categoryNames = defaultCategories;
 
     const resolvedParams = await searchParams;
