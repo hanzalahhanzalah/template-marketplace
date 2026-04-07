@@ -89,6 +89,8 @@ export default async function TemplateDetailPage({
             ? urlFor(template.thumbnail).width(800).url()
             : '';
 
+    const galleryUrls: string[] = template.gallery || [];
+
     const imageUrl = thumbnailUrl || `${BASE_URL}/og-default.png`;
 
     // JSON-LD: Product structured data for Google rich results
@@ -150,6 +152,8 @@ export default async function TemplateDetailPage({
                 description={template.description || ''}
                 category={template.category || ''}
                 thumbnailUrl={thumbnailUrl}
+                galleryUrls={galleryUrls}
+                bundleItems={template.bundleItems || []}
                 pricingType={template.pricingType || 'free'}
                 price={String(template.price || '')}
                 features={template.features || []}

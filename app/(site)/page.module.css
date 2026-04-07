@@ -1,13 +1,29 @@
 /* Hero Section */
 .hero {
-    padding: 140px 0 60px;
+    padding: 140px 0 70px;
     background: var(--bg-secondary);
     text-align: center;
 }
 
 .heroContent {
-    max-width: 700px;
+    max-width: 760px;
     margin: 0 auto;
+}
+
+.heroBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 18px;
+    margin-bottom: 24px;
+    background: var(--accent-light);
+    color: var(--accent-primary);
+    border: 1px solid rgba(30, 115, 190, 0.2);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    letter-spacing: 0.3px;
 }
 
 .heroContent h1 {
@@ -28,6 +44,50 @@
     gap: 16px;
     justify-content: center;
     flex-wrap: wrap;
+    margin-bottom: 48px;
+}
+
+/* Hero Stats Bar */
+.heroStats {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 16px 32px;
+    box-shadow: var(--shadow-sm);
+}
+
+.heroStat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 0 28px;
+}
+
+.heroStat strong {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--accent-primary);
+    line-height: 1;
+}
+
+.heroStat span {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.heroStatDivider {
+    width: 1px;
+    height: 36px;
+    background: var(--border-color);
+    flex-shrink: 0;
 }
 
 /* Categories */
@@ -73,10 +133,33 @@
     background: var(--bg-primary);
 }
 
-.viewAll {
-    text-align: center;
-    margin-top: 50px;
+/* All Templates Showcase */
+.allTemplates {
+    background: linear-gradient(135deg, #f8f9fa 0%, #eef4fb 100%);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
 }
+
+/* "All" pill in categories */
+.categoryAll {
+    background: var(--accent-primary);
+    color: var(--text-light) !important;
+    border-color: var(--accent-primary) !important;
+}
+
+.categoryAll:hover {
+    background: var(--accent-hover);
+    color: var(--text-light) !important;
+}
+
+.viewAll {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
 
 /* Trust Section */
 .trust {
@@ -196,16 +279,6 @@
     }
 }
 
-@media (max-width: 480px) {
-    .trustGrid {
-        grid-template-columns: 1fr;
-    }
-
-    .heroContent h1 {
-        font-size: 2rem;
-    }
-}
-
 @media (max-width: 768px) {
     .hero {
         padding: 100px 0 50px;
@@ -214,11 +287,24 @@
     .heroActions {
         flex-direction: column;
         align-items: center;
+        margin-bottom: 32px;
     }
 
     .heroActions .btn {
         width: 100%;
         max-width: 280px;
+    }
+
+    .heroStats {
+        padding: 12px 16px;
+    }
+
+    .heroStat {
+        padding: 0 14px;
+    }
+
+    .heroStat strong {
+        font-size: 1.2rem;
     }
 
     .trustGrid {
@@ -229,3 +315,29 @@
         flex-direction: column;
     }
 }
+
+@media (max-width: 480px) {
+    .heroContent h1 {
+        font-size: 2rem;
+    }
+
+    .heroBadge {
+        font-size: 0.78rem;
+        padding: 5px 14px;
+    }
+
+    .trustGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .heroStats {
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px 24px;
+    }
+
+    .heroStatDivider {
+        width: 60px;
+        height: 1px;
+    }
+}

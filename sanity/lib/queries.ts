@@ -89,6 +89,8 @@ export async function getTemplateBySlug(slug: string) {
       metaImage,
       tags,
       thumbnail,
+      "gallery": gallery[].asset->url,
+      bundleItems,
       "category": category->title,
       demoUrl,
       "demoZipUrl": demoZip.asset->url,
@@ -103,6 +105,21 @@ export async function getTemplateBySlug(slug: string) {
   `, { slug });
 }
 
+
+export async function getAllTemplates(limit = 12) {
+  return client.fetch(`
+    *[_type == "template"] | order(order asc) [0...$limit] {
+      title,
+      "slug": slug.current,
+      description,
+      thumbnail,
+      "category": category->title,
+      demoUrl,
+      pricingType,
+      price
+    }
+  `, { limit });
+}
 
 export async function getAllTemplateSlugs() {
   return client.fetch(`

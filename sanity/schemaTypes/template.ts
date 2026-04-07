@@ -33,6 +33,33 @@ export default defineType({
             description: 'Upload a high-quality screenshot of the template (16:10 aspect ratio recommended). The system will automatically wrap it in a professional browser mockup.',
         }),
         defineField({
+            name: 'gallery',
+            title: 'Image Gallery (Multiple Screenshots)',
+            type: 'array',
+            of: [{ type: 'image', options: { hotspot: true } }],
+            description: 'Upload up to 8 additional screenshots. These appear as a clickable thumbnail strip on the product page.',
+        }),
+        defineField({
+            name: 'bundleItems',
+            title: 'Bundle Sub-Templates',
+            type: 'array',
+            description: 'For bundle products: list each sub-template inside the ZIP. Users can click to preview each one individually.',
+            of: [
+                {
+                    type: 'object',
+                    fields: [
+                        defineField({ name: 'label', title: 'Template Name', type: 'string', description: 'e.g. "AI/ML Platform"' }),
+                        defineField({ name: 'path', title: 'Path inside ZIP', type: 'string', description: 'e.g. "ai-ml-saas/index.html"' }),
+                        defineField({ name: 'description', title: 'Short Description', type: 'string' }),
+                        defineField({ name: 'icon', title: 'Emoji Icon', type: 'string', description: 'e.g. "🤖" (optional)' }),
+                    ],
+                    preview: {
+                        select: { title: 'label', subtitle: 'path' },
+                    },
+                },
+            ],
+        }),
+        defineField({
             name: 'category',
             title: 'Category',
             type: 'reference',

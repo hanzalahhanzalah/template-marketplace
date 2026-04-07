@@ -1,0 +1,909 @@
+[
+  {
+    "_id": "4TadX00vOGetgyBa5rER18",
+    "seoDescription": "Ultimate 8-page multi-page crypto HTML template. Features live price ticker, NFT gallery, ICO landing, and trading dashboard. Built with futuristic dark/ligh...",
+    "seoTitle": "Cryptoverse Pro — Premium Multipage Crypto & NFT",
+    "slug": {
+      "_type": "slug",
+      "current": "cryptoverse-pro-multipage-crypto-html-template"
+    },
+    "tags": [
+      "crypto multipage template",
+      "NFT marketplace template",
+      "DeFi website template",
+      "blockchain HTML template",
+      "crypto market template",
+      "premium crypto website",
+      "ICO landing 8-page",
+      "web3 business template",
+      "bitcoin ethereum website",
+      "futuristic UI kit",
+      "premium html",
+      "responsive design",
+      "marketplace ready",
+      "seo optimized",
+      "high performance"
+    ],
+    "technologies": [
+      "HTML5 (Multipage)",
+      "CSS3 (Bento Grid)",
+      "Vanilla JavaScript",
+      "particles.js",
+      "Chart.js",
+      "AOS Animations"
+    ],
+    "title": "Cryptoverse Pro — Premium Multipage Crypto & NFT Template"
+  },
+  {
+    "_id": "BdOU0U0xFBxFenCTMWjt3j",
+    "seoDescription": "Premium one-page creative agency HTML template with purple theme, hero slider, filterable portfolio, and glassmorphism effects. Fast & responsive.",
+    "seoTitle": "Nexus Agency — Premium One-Page Business | HTML Template",
+    "slug": {
+      "_type": "slug",
+      "current": "agency-starter-premium-one-page-template"
+    },
+    "tags": [
+      "agency template",
+      "one page HTML template",
+      "creative agency website",
+      "purple theme template",
+      "glassmorphism HTML",
+      "business landing page",
+      "portfolio landing page",
+      "marketing agency template",
+      "modern agency website",
+      "responsive one page template",
+      "premium html",
+      "responsive design",
+      "marketplace ready",
+      "seo optimized",
+      "high performance"
+    ],
+    "technologies": [
+      "HTML5",
+      "CSS3 (Glassmorphism)",
+      "Vanilla JavaScript",
+      "CSS Custom Properties",
+      "SVG Icons",
+      "Google Fonts"
+    ],
+    "title": "Nexus Agency — Premium One-Page Business Template"
+  },
+  {
+    "_id": "BdOU0U0xFBxFenCTMWkFTz",
+    "seoDescription": "Premium car repair and automotive shop HTML template. Features service booking UI, testimonials, and rugged responsive design. Fast & SEO friendly.",
+    "seoTitle": "AutoFix — Premium Car Repair & Automotive | HTML Template",
+    "slug": {
+      "_type": "slug",
+      "current": "auto-fix-premium-car-repair-landing-page-template"
+    },
+    "tags": [
+      "car repair template",
+      "automotive website",
+      "mechanic landing page",
+      "auto shop HTML template",
+      "detailing website template",
+      "car service landing page",
+      "professional auto repair",
+      "local business template",
+      "responsive mechanic website",
+      "premium automotive UI",
+      "premium html",
+      "responsive design",
+      "marketplace ready",
+      "seo optimized",
+      "high performance"
+    ],
+    "technologies": [
+      "HTML5",
+      "CSS3 (Variables)",
+      "Vanilla JavaScript",
+      "FontAwesome Icons",
+      "Google Fonts"
+    ],
+    "title": "AutoFix — Premium Car Repair & Automotive Template"
+  },
+  {
+    "_id": "BdOU0U0xFBxFenCTMWkImN",
+    "seoDescription": "Elegant 8-page multi-page wedding HTML template. Features RSVP form, story timeline, gallery, and blog. Perfectly responsive and romantic design.",
+    "seoTitle": "Everly — Premium Multipage Wedding & Events | HTML Template",
+    "slug": {
+      "_type": "slug",
+      "current": "everly-premium-multipage-wedding-template"
+    },
+    "tags": [
+      "wedding template",
+      "multipage wedding website",
+      "romantic event template",
+      "RSVP website template",
+      "wedding gallery HTML",
+      "couple story template",
+      "premium wedding UI",
+      "wedding planner website",
+      "sophisticated event template",
+      "responsive wedding page",
+      "premium html",
+      "responsive design",
+      "marketplace ready",
+      "seo optimized",
+      "high performance"
+    ],
+    "technologies": [
+      "HTML5 (Multipage)",
+      "CSS3 (Animations)",
+      "Vanilla JavaScript",
+      "Google Fonts",
+      "Modernizr.js"
+    ],
+    "title": "Everly — Premium Multipage Wedding & Events Template"
+  },
+  {
+    "_id": "BdOU0U0xFBxFenCTMWkUkL",
+    "seoDescription": "Premium 6-page education HTML template. Features course grids, lesson details, instructor profiles, and blog. Fully responsive and optimized for speed.",
+    "seoTitle": "EduPro — Premium Online Course & Education | HTML Template",
+    "slug": {
+      "_type": "slug",
+      "current": "edu-pro-premium-online-course-education-template"
+    },
+    "tags": [
+      "education template",
+      "online course website",
+      "LMS frontend template",
+      "learning platform HTML",
+      "school website template",
+      "university landing page",
+      "premium education UI",
+      "course listing template",
+      "responsive education website",
+      "vanilla js education template",
+      "premium html",
+      "responsive design",
+      "marketplace ready",
+      "seo optimized",
+      "high performance"
+    ],
+    "technologies": [
+      "HTML5 (Multipage)",
+      "CSS3 (Flexbox/Grid)",
+      "Vanilla JavaScript",
+      "Google Fonts",
+      "SVG Icons"
+    ],
+    "title": "EduPro — Premium Online Course & Education Template"
+  },
+  {
+    "_id": "BdOU0U0xFBxFenCTMXv8AH",
+    "seoDescription": "Premium dark-themed crypto HTML template. 7 specialized pages for ICOs, markets, and DeFi assets. High-performance, SEO-ready, and mobile-responsive.",
+    "seoTitle": "CryptoNexus — Premium ICO & DeFi Multipage | HTML Template",
+    "slug": {
+      "_type": "slug",
+      "current": "cryptonexus-premium-ico-defi-multipage-template"
+    },
+    "tags": [
+      "crypto template",
+      "ICO landing page",
+      "DeFi website UI",
+      "blockchain template",
+      "dark mode crypto theme",
+      "web3 landing page",
+      "premium crypto design",
+      "responsive blockchain website",
+      "vanilla js crypto",
+      "tokenomics UI template",
+      "premium html",
+      "responsive design",
+      "marketplace ready",
+      "seo optimized",
+      "high performance"
+    ],
+    "technologies": [
+      "HTML5 (Multipage)",
+      "CSS3 (Custom Properties)",
+      "Vanilla JavaScript",
+      "Orbitron & Inter Google Fonts",
+      "AOS Animations",
+      "Particles.js Integration"
+    ],
+    "title": "CryptoNexus — Premium ICO & DeFi Multipage Template"
+  },
+  {
+    "_id": "Gn8jgLeaocYXQpT7iQEHgU",
+    "seoDescription": "Premium personal portfolio HTML template with dark/light mode toggle, smooth animations, filterable gallery, and 6 clean pages for creative professionals.",
+    "seoTitle": "Reeni — Modern Personal Portfolio HTML | HTML Template",
+    "slug": {
+      "_type": "slug",
+      "current": "reeni-personal-portfolio-html-template"
+    },
+    "tags": [
+      "portfolio template",
+      "personal portfolio HTML",
+      "dark mode portfolio",
+      "designer portfolio template",
+      "developer portfolio HTML",
+      "minimal portfolio",
+      "creative portfolio",
+      "freelancer website template",
+      "clean portfolio design",
+      "HTML CSS portfolio",
+      "premium html",
+      "responsive design",
+      "marketplace ready",
+      "seo optimized",
+      "high performance"
+    ],
+    "technologies": [
+      "HTML5",
+      "CSS3 (Flexbox/Grid)",
+      "Vanilla JavaScript",
+      "Swiper.js",
+      "Remix Icons",
+      "Google Fonts (Inter, Outfit)"
+    ],
+    "title": "Reeni — Modern Personal Portfolio HTML Template"
+  },
+  {
+    "_id": "Gn8jgLeaocYXQpT7iQFi0T",
+    "seoDescription": "Modern and professional SaaS landing page HTML template. Responsive design, pricing tables, and feature showcases. Optimized for conversions.",
+    "seoTitle": "SaaS Pro — Modern SaaS Landing Page | HTML Template",
+    "slug": {
+      "_type": "slug",
+      "current": "saas-pro-modern-landing-page-template"
+    },
+    "tags": [
+      "saas template",
+      "software landing page",
+      "pricing table html",
+      "conversion optimized landing page",
+      "startup website template",
+      "tech landing page",
+      "professional saas UI",
+      "modern software landing",
+      "responsive saas website",
+      "vanilla js saas template",
+      "premium html",
+      "responsive design",
+      "marketplace ready",
+      "seo optimized",
+      "high performance"
+    ],
+    "technologies": [
+      "HTML5",
+      "CSS3 (Custom Properties)",
+      "Vanilla JavaScript",
+      "Google Fonts",
+      "Lucide Icons / SVG"
+    ],
+    "title": "SaaS Pro — Modern SaaS Landing Page Template"
+  },
+  {
+    "_id": "Gn8jgLeaocYXQpT7iTFZhZ",
+    "seoDescription": "Premium 6-page restaurant HTML template. Features digital menus, reservation forms, and story pages. Fully responsive, ultra-fast, and SEO-optimized.",
+    "seoTitle": "Urban Bites — Premium Restaurant & Dining | HTML Template",
+    "slug": {
+      "_type": "slug",
+      "current": "urban-bites-premium-restaurant-dining-template"
+    },
+    "tags": [
+      "restaurant template",
+      "dining website HTML",
+      "food menu template",
+      "reservation system UI",
+      "cafe website template",
+      "gastronomy landing page",
+      "premium restaurant UI",
+      "responsive dining template",
+      "vanilla js restaurant",
+      "culinary portfolio",
+      "premium html",
+      "responsive design",
+      "marketplace ready",
+      "seo optimized",
+      "high performance"
+    ],
+    "technologies": [
+      "HTML5 (Multipage)",
+      "CSS3 (Flexbox/Grid)",
+      "Vanilla JavaScript",
+      "Google Fonts",
+      "SVG Icons"
+    ],
+    "title": "Urban Bites — Premium Restaurant & Dining Template"
+  },
+  {
+    "_id": "Gn8jgLeaocYXQpT7iTFck7",
+    "seoDescription": "Premium 7-page admin dashboard HTML template. Features order management, user directory, and product inventory. Fully responsive and framework-free.",
+    "seoTitle": "AdminPro — Premium Admin Dashboard | HTML Template",
+    "slug": {
+      "_type": "slug",
+      "current": "admin-dashboard-premium-saas-backend-template"
+    },
+    "tags": [
+      "admin dashboard",
+      "saas backend template",
+      "ecommerce dashboard",
+      "user management UI",
+      "inventory management template",
+      "admin landing page",
+      "premium dashboard design",
+      "responsive admin panel",
+      "vanilla js dashboard",
+      "saas UI kit",
+      "premium html",
+      "responsive design",
+      "marketplace ready",
+      "seo optimized",
+      "high performance"
+    ],
+    "technologies": [
+      "HTML5 (Dashboard Layout)",
+      "CSS3 (Custom Properties)",
+      "Vanilla JavaScript",
+      "Google Fonts (Inter)",
+      "Data Tables (UI)",
+      "SVG Components"
+    ],
+    "title": "AdminPro — Premium Admin Dashboard Template"
+  },
+  {
+    "_id": "Gn8jgLeaocYXQpT7iTFgLg",
+    "seoDescription": "High-performance CRM dashboard HTML template. Features sales pipeline, customer management, and revenue analytics. Fully responsive, dark mode, and SEO-optim...",
+    "seoTitle": "CRM Pro — Premium Customer Relationship Management Dashboard",
+    "slug": {
+      "_type": "slug",
+      "current": "crm-pro-premium-customer-relationship-management-dashboard"
+    },
+    "tags": [
+      "crm dashboard",
+      "customer relationship management",
+      "sales pipeline UI",
+      "saas dashboard template",
+      "admin panel HTML",
+      "premium crm design",
+      "responsive dashboard",
+      "business management tool",
+      "vanilla js crm",
+      "data visualization template",
+      "premium html",
+      "responsive design",
+      "marketplace ready",
+      "seo optimized",
+      "high performance"
+    ],
+    "technologies": [
+      "HTML5 (Single-page Dashboard)",
+      "CSS3 (Flexbox/Grid)",
+      "Vanilla JavaScript",
+      "Chart.js Visualization",
+      "Google Fonts (Inter)",
+      "Font Awesome 6"
+    ],
+    "title": "CRM Pro — Premium Customer Relationship Management Dashboard"
+  },
+  {
+    "_id": "Gn8jgLeaocYXQpT7iTFmLO",
+    "seoDescription": "Premium single-page wedding HTML template. Features RSVP form, story timeline, and photo gallery. Fully responsive, romantic design, and SEO-friendly.",
+    "seoTitle": "EternalLove — Premium One-Page Wedding | HTML Template",
+    "slug": {
+      "_type": "slug",
+      "current": "eternal-love-premium-one-page-wedding-template"
+    },
+    "tags": [
+      "wedding template",
+      "wedding invitation html",
+      "single page wedding",
+      "romantic website",
+      "rsvp template",
+      "couple story website",
+      "marriage announcement",
+      "premium wedding design",
+      "one page landing",
+      "responsive wedding site",
+      "premium html",
+      "responsive design",
+      "marketplace ready",
+      "seo optimized",
+      "high performance"
+    ],
+    "technologies": [
+      "HTML5 (Semantic Layout)",
+      "CSS3 (Flexbox/Animations)",
+      "Vanilla JavaScript",
+      "Google Fonts (Cormorant Garamond)",
+      "SVG Icons",
+      "Responsiveness (Mobile-first)"
+    ],
+    "title": "EternalLove — Premium One-Page Wedding Template"
+  },
+  {
+    "_id": "Gn8jgLeaocYXQpT7iTFwID",
+    "seoDescription": "High-performance single-page SaaS landing page HTML template. Features feature grids, pricing tables, and CTA sections. Fully responsive, clean design, and S...",
+    "seoTitle": "SaaS Pro Landing — Modern Software Landing Page",
+    "slug": {
+      "_type": "slug",
+      "current": "saas-pro-landing-premium-onepage-template"
+    },
+    "tags": [
+      "saas landing page",
+      "software landing kit",
+      "startup website template",
+      "single page saas",
+      "premium software design",
+      "responsive landing page",
+      "business automation landing",
+      "vanilla js startup",
+      "conversion optimized",
+      "modern landing page",
+      "premium html",
+      "responsive design",
+      "marketplace ready",
+      "seo optimized",
+      "high performance"
+    ],
+    "technologies": [
+      "HTML5 (Single-page Layout)",
+      "CSS3 (Flexbox/Grid)",
+      "Vanilla JavaScript",
+      "Google Fonts (Inter)",
+      "SVG Components",
+      "Intersection Observer Animations"
+    ],
+    "title": "SaaS Pro Landing — Modern Software Landing Page"
+  },
+  {
+    "_id": "Gn8jgLeaocYXQpT7iTFyj3",
+    "seoDescription": "High-performance single-page SaaS landing page HTML template. Features feature grids, pricing tables, and FAQ sections. Fully responsive, clean design, and S...",
+    "seoTitle": "CleanStream — Modern SaaS Landing Page | HTML Template",
+    "slug": {
+      "_type": "slug",
+      "current": "clean-stream-modern-saas-landing-template"
+    },
+    "tags": [
+      "clean saas landing",
+      "modern software template",
+      "startup landing page",
+      "single page saas",
+      "premium software design",
+      "responsive landing page",
+      "software business website",
+      "vanilla js startup",
+      "conversion optimized",
+      "minimalist saas design",
+      "premium html",
+      "responsive design",
+      "marketplace ready",
+      "seo optimized",
+      "high performance"
+    ],
+    "technologies": [
+      "HTML5 (Single-page Layout)",
+      "CSS3 (Custom Transitions)",
+      "Vanilla JavaScript",
+      "Google Fonts (Inter)",
+      "SVG Support",
+      "Intersection Observer Animations"
+    ],
+    "title": "CleanStream — Modern SaaS Landing Page"
+  },
+  {
+    "_id": "XejQA1ZUhEQcECOLGnV448",
+    "seoDescription": "Premium multi-page restaurant HTML template with dark/light mode, digital menu, reservation form, gallery lightbox, and AOS animations. 6 pages included.",
+    "seoTitle": "Savoria — Premium Restaurant Website | HTML Template",
+    "slug": {
+      "_type": "slug",
+      "current": "savoria-restaurant-html-template"
+    },
+    "tags": [
+      "restaurant website template",
+      "cafe HTML template",
+      "fine dining template",
+      "dark mode website template",
+      "restaurant booking template",
+      "HTML5 CSS3 restaurant",
+      "Swiper.js template",
+      "food website template",
+      "bistro website template",
+      "reservation form HTML template",
+      "premium html",
+      "responsive design",
+      "marketplace ready",
+      "seo optimized",
+      "high performance"
+    ],
+    "technologies": [
+      "HTML5",
+      "CSS3",
+      "JavaScript ES6",
+      "Swiper.js",
+      "AOS.js",
+      "Flatpickr",
+      "Font Awesome 6",
+      "Google Fonts",
+      "Vanilla JavaScript"
+    ],
+    "title": "Savoria — Premium Restaurant Website Template"
+  },
+  {
+    "_id": "XejQA1ZUhEQcECOLGp60VZ",
+    "seoDescription": "Premium 12-page real estate HTML template with interactive map, property listing grid, agent profiles, and sign-in pages. Built with Leaflet.js and Swiper.js.",
+    "seoTitle": "PropVista — Premium Real Estate Website | HTML Template",
+    "slug": {
+      "_type": "slug",
+      "current": "propvista-real-estate-html-template"
+    },
+    "tags": [
+      "real estate website template",
+      "property listing template",
+      "real estate HTML template",
+      "Leaflet.js real estate",
+      "property search template",
+      "real estate agency website",
+      "house listing website template",
+      "apartment listing template",
+      "real estate agent website",
+      "property template HTML CSS",
+      "premium html",
+      "responsive design",
+      "marketplace ready",
+      "seo optimized",
+      "high performance"
+    ],
+    "technologies": [
+      "HTML5",
+      "CSS3",
+      "JavaScript ES6",
+      "Leaflet.js",
+      "Swiper.js",
+      "Font Awesome 6",
+      "Google Fonts",
+      "Vanilla JavaScript"
+    ],
+    "title": "PropVista — Premium Real Estate Website Template"
+  },
+  {
+    "_id": "XejQA1ZUhEQcECOLGp6R1s",
+    "seoDescription": "Premium crypto landing page HTML template with dark/light mode, animated countdown, tokenomics chart, and wallet connect UI. Built for ICO launches.",
+    "seoTitle": "Nexatoken — Premium ICO & Crypto Landing Page",
+    "slug": {
+      "_type": "slug",
+      "current": "nexatoken-premium-ico-landing-page-template"
+    },
+    "tags": [
+      "crypto template",
+      "ICO landing page",
+      "blockchain website template",
+      "token launch template",
+      "web3 landing page",
+      "dark mode crypto template",
+      "cryptocurrency HTML template",
+      "tokenomics website",
+      "crypto countdown template",
+      "futuristic landing page",
+      "premium html",
+      "responsive design",
+      "marketplace ready",
+      "seo optimized",
+      "high performance"
+    ],
+    "technologies": [
+      "HTML5",
+      "CSS3 (Animations)",
+      "Vanilla JavaScript",
+      "tsParticles.js",
+      "Chart.js",
+      "AOS.js",
+      "FlipDown.js"
+    ],
+    "title": "Nexatoken — Premium ICO & Crypto Landing Page Template"
+  },
+  {
+    "_id": "XejQA1ZUhEQcECOLGp6jg3",
+    "seoDescription": "Clean and modern personal anime tracker HTML template. Features dark theme, list management, discovery cards, and responsive design. Pure HTML/CSS/JS.",
+    "seoTitle": "Anime Watchlist — Personal Tracking & Discovery",
+    "slug": {
+      "_type": "slug",
+      "current": "anime-watchlist-personal-tracker-template"
+    },
+    "tags": [
+      "anime watchlist template",
+      "entertainment tracker",
+      "personal list manager",
+      "dark theme template",
+      "fandom website template",
+      "hobby tracker HTML",
+      "anime discovery page",
+      "personal dashboard template",
+      "responsive tracker UI",
+      "purple theme landing page",
+      "premium html",
+      "responsive design",
+      "marketplace ready",
+      "seo optimized",
+      "high performance"
+    ],
+    "technologies": [
+      "HTML5",
+      "CSS3 (Flexbox/Grid)",
+      "Vanilla JavaScript",
+      "Google Fonts",
+      "FontAwesome Icons"
+    ],
+    "title": "Anime Watchlist — Personal Tracking & Discovery Template"
+  },
+  {
+    "_id": "XejQA1ZUhEQcECOLGp6pzB",
+    "seoDescription": "Premium minimal SaaS landing page HTML template. Responsive design, fast-loading, and optimized for conversions. Pure HTML/CSS/JS. Built with semantic HTML5 ...",
+    "seoTitle": "Anvena — Minimal SaaS Landing Page | HTML Template",
+    "slug": {
+      "_type": "slug",
+      "current": "anvena-minimal-saas-landing-page-template"
+    },
+    "tags": [
+      "saas landing page",
+      "software website template",
+      "minimalist landing page",
+      "startup HTML template",
+      "digital product website",
+      "clean saas template",
+      "responsive landing page",
+      "high conversion template",
+      "modern software website",
+      "vanilla js landing page",
+      "premium html",
+      "responsive design",
+      "marketplace ready",
+      "seo optimized",
+      "high performance"
+    ],
+    "technologies": [
+      "HTML5",
+      "CSS3 (Flexbox)",
+      "Vanilla JavaScript",
+      "Google Fonts",
+      "SVG Icons"
+    ],
+    "title": "Anvena — Minimal SaaS Landing Page Template"
+  },
+  {
+    "_id": "XejQA1ZUhEQcECOLGp77nj",
+    "seoDescription": "Premium 7-page digital products marketplace HTML template. Features product details, cart UI, and blog. Perfectly responsive and optimized for conversions.",
+    "seoTitle": "DigiStore — Premium Digital Products Marketplace",
+    "slug": {
+      "_type": "slug",
+      "current": "digi-store-premium-digital-products-marketplace-template"
+    },
+    "tags": [
+      "digital marketplace template",
+      "software store HTML",
+      "digital product website",
+      "cart ui template",
+      "e-commerce landing page",
+      "creator marketplace UI",
+      "premium digital store",
+      "responsive marketplace template",
+      "vanilla js marketplace",
+      "digital asset store",
+      "premium html",
+      "responsive design",
+      "marketplace ready",
+      "seo optimized",
+      "high performance"
+    ],
+    "technologies": [
+      "HTML5 (Multipage)",
+      "CSS3 (Custom Properties)",
+      "Vanilla JavaScript",
+      "Google Fonts",
+      "SVG Icons"
+    ],
+    "title": "DigiStore — Premium Digital Products Marketplace Template"
+  },
+  {
+    "_id": "XejQA1ZUhEQcECOLGqpQr5",
+    "seoDescription": "Premium minimalist wedding HTML template with 6 pages. Includes RSVP module, story timeline, and elegant galleries. Fully responsive and fast.",
+    "seoTitle": "Elegant Wedding — Minimalist Multipage Celebration",
+    "slug": {
+      "_type": "slug",
+      "current": "elegant-wedding-minimalist-multipage-template"
+    },
+    "tags": [
+      "elegant wedding template",
+      "minimalist wedding website",
+      "multipage event template",
+      "RSVP website UI",
+      "wedding story template",
+      "clean event landing page",
+      "premium wedding UI",
+      "responsive wedding template",
+      "vanilla js wedding page",
+      "timeless wedding design",
+      "premium html",
+      "responsive design",
+      "marketplace ready",
+      "seo optimized",
+      "high performance"
+    ],
+    "technologies": [
+      "HTML5 (Multipage)",
+      "CSS3 (Flexbox/Grid)",
+      "Vanilla JavaScript",
+      "Google Fonts",
+      "SVG Icons"
+    ],
+    "title": "Elegant Wedding — Minimalist Multipage Celebration Template"
+  },
+  {
+    "_id": "XejQA1ZUhEQcECOLGqpZHd",
+    "seoDescription": "High-conversion SaaS landing page HTML template. Features feature lists, pricing, and testimonial sections. Fully responsive and optimized for business autom...",
+    "seoTitle": "WhatsApp Business Kit — Premium SaaS Landing | HTML Template",
+    "slug": {
+      "_type": "slug",
+      "current": "whatsapp-business-kit-premium-saas-landing-template"
+    },
+    "tags": [
+      "whatsapp business",
+      "saas landing page",
+      "marketing template",
+      "business toolkit UI",
+      "automation software landing",
+      "premium saas design",
+      "responsive landing page",
+      "software as a service",
+      "vanilla js landing",
+      "conversion optimized",
+      "premium html",
+      "responsive design",
+      "marketplace ready",
+      "seo optimized",
+      "high performance"
+    ],
+    "technologies": [
+      "HTML5 (Semantic Structure)",
+      "CSS3 (Custom Animations)",
+      "Vanilla JavaScript",
+      "Google Fonts (Inter)",
+      "SVG Components",
+      "Intersection Observer API"
+    ],
+    "title": "WhatsApp Business Kit — Premium SaaS Landing Template"
+  },
+  {
+    "_id": "XejQA1ZUhEQcECOLGqpbTk",
+    "seoDescription": "Premium 4-page enterprise dashboard HTML template. Features user network, profile creator, and professional data views. Fully responsive and framework-free.",
+    "seoTitle": "",
+    "slug": {
+      "_type": "slug",
+      "current": "metronic-pro-premium-enterprise-dashboard-ui-suite"
+    },
+    "tags": [
+      "enterprise dashboard",
+      "admin ui kit",
+      "user profile template",
+      "saas management panel",
+      "network management UI",
+      "premium dashboard design",
+      "responsive admin panel",
+      "vanilla js dashboard",
+      "profile creator UI",
+      "social network template",
+      "premium html",
+      "responsive design",
+      "marketplace ready",
+      "seo optimized",
+      "high performance"
+    ],
+    "technologies": [
+      "HTML5 (Multi-page Enterprise Layout)",
+      "CSS3 (Custom UI Components)",
+      "Vanilla JavaScript",
+      "Google Fonts (Poppins)",
+      "SVG Icon System",
+      "Data-driven UI (Lists/Tables)"
+    ],
+    "title": "MetronicPro — Premium Enterprise Dashboard & UI Suite"
+  },
+  {
+    "_id": "XejQA1ZUhEQcECOLGqpcfH",
+    "seoDescription": "Premium 7-page SaaS landing page HTML template. Features pricing, documentation, and contact sections. Fully responsive, high-performance, and SEO-optimized.",
+    "seoTitle": "SaaS Landing — Premium Modern Software | HTML Template",
+    "slug": {
+      "_type": "slug",
+      "current": "saas-landing-premium-modern-software-template"
+    },
+    "tags": [
+      "saas landing page",
+      "software dashboard",
+      "startup template",
+      "multipage saas website",
+      "documentation template",
+      "pricing table html",
+      "premium software design",
+      "responsive saas landing",
+      "vanilla js startup",
+      "conversion optimized",
+      "premium html",
+      "responsive design",
+      "marketplace ready",
+      "seo optimized",
+      "high performance"
+    ],
+    "technologies": [
+      "HTML5 (Multi-page Architecture)",
+      "CSS3 (Custom Transitions)",
+      "Vanilla JavaScript",
+      "Google Fonts (Outfit)",
+      "SVG Support",
+      "Responsiveness (Tailored Breakpoints)"
+    ],
+    "title": "SaaS Landing — Premium Modern Software Template"
+  },
+  {
+    "_id": "XejQA1ZUhEQcECOLGqpeHP",
+    "seoDescription": "Premium bundle of 4 industry-specific SaaS landing pages: AI, Finance, HR, and Marketing. 28+ total pages, fully responsive and optimized for software startups.",
+    "seoTitle": "SaaS Bundle — 4 Premium Industry-Specific Landing Pages",
+    "slug": {
+      "_type": "slug",
+      "current": "saas-bundle-enterprise-ui-kit-multipage-template"
+    },
+    "tags": [
+      "saas bundle",
+      "industry specific landing",
+      "ai saas template",
+      "fintech landing page",
+      "hr tech website",
+      "marketing software UI",
+      "multipage saas kit",
+      "premium software bundle",
+      "responsive saas design",
+      "vanilla js saas collection",
+      "premium html",
+      "responsive design",
+      "marketplace ready",
+      "seo optimized",
+      "high performance"
+    ],
+    "technologies": [
+      "HTML5 (Multi-industry Architecture)",
+      "CSS3 (Custom UI Kits)",
+      "Vanilla JavaScript",
+      "Google Fonts (Inter / Montserrat)",
+      "SVG Asset Collection",
+      "Responsiveness (Global Standards)"
+    ],
+    "title": "SaaS Bundle — 4 Premium Industry-Specific Landing Pages"
+  },
+  {
+    "_id": "drafts.XejQA1ZUhEQcECOLGqpZHd",
+    "seoDescription": "High-conversion SaaS landing page HTML template. Features feature lists, pricing, and testimonial sections. Fully responsive and optimized for business autom...",
+    "seoTitle": "WhatsApp Business Kit — Premium SaaS Landing | HTML Template",
+    "slug": {
+      "_type": "slug",
+      "current": "whatsapp-business-kit-premium-saas-landing-template"
+    },
+    "tags": [
+      "whatsapp business",
+      "saas landing page",
+      "marketing template",
+      "business toolkit UI",
+      "automation software landing",
+      "premium saas design",
+      "responsive landing page",
+      "software as a service",
+      "vanilla js landing",
+      "conversion optimized",
+      "premium html",
+      "responsive design",
+      "marketplace ready",
+      "seo optimized",
+      "high performance"
+    ],
+    "technologies": [
+      "HTML5 (Semantic Structure)",
+      "CSS3 (Custom Animations)",
+      "Vanilla JavaScript",
+      "Google Fonts (Inter)",
+      "SVG Components",
+      "Intersection Observer API"
+    ],
+    "title": "WhatsApp Business Kit — Premium SaaS Landing Template"
+  }
+]

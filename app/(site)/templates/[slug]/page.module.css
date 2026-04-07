@@ -289,3 +289,171 @@
         font-size: 1.75rem;
     }
 }
+
+/* Gallery Thumbnail Strip */
+.galleryStrip {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scrollbar-width: thin;
+}
+
+.galleryThumb {
+    flex-shrink: 0;
+    width: 100px;
+    height: 64px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid var(--border-color);
+    cursor: pointer;
+    padding: 0;
+    background: none;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.galleryThumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.galleryThumb:hover {
+    border-color: var(--accent-primary);
+}
+
+.galleryThumbActive {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 2px var(--accent-light);
+}
+
+/* Bundle Notice */
+.bundleNotice {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 20px;
+    margin-top: 16px;
+    background: var(--accent-light);
+    border: 1px solid var(--accent-primary);
+    border-radius: 12px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.bundleNotice svg {
+    flex-shrink: 0;
+    color: var(--accent-primary);
+    margin-top: 2px;
+}
+
+.bundleNotice strong {
+    color: var(--accent-primary);
+}
+
+/* Bundle Items List */
+.bundleList h3 {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+}
+
+.bundleGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.bundleCard {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+}
+
+.bundleCard:hover {
+    border-color: var(--accent-primary);
+    background: var(--accent-light);
+    color: var(--accent-primary);
+    box-shadow: var(--shadow-md);
+}
+
+.bundleIcon {
+    font-size: 2rem;
+    flex-shrink: 0;
+    width: 48px;
+    text-align: center;
+}
+
+.bundleCard > div {
+    flex: 1;
+}
+
+.bundleCard strong {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.bundleCard p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.bundleArrow {
+    flex-shrink: 0;
+    color: var(--text-muted);
+    transition: color 0.2s ease;
+}
+
+.bundleCard:hover .bundleArrow {
+    color: var(--accent-primary);
+}
+
+/* Buy section */
+.buySection h3 {
+    font-size: 1.25rem;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+}
+
+.buySection .buyLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.buySection .buyLink {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    font-weight: 600;
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+}
+
+.buySection .buyLink:hover {
+    border-color: var(--accent-primary);
+    background: var(--accent-light);
+    color: var(--accent-primary);
+}
+
+.buySection .buyPrice {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent-primary);
+}
