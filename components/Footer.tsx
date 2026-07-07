@@ -102,8 +102,9 @@ export default function Footer() {
                 <div className={styles.footerBottom}>
                     <p>&copy; {currentYear} {settings.siteName}. All rights reserved.</p>
                     <div className={styles.legal}>
-                        <Link href="#">Privacy Policy</Link>
-                        <Link href="#">Terms of Service</Link>
+                        <Link href="/privacy-policy">Privacy Policy</Link>
+                        <Link href="/terms">Terms of Service</Link>
+                        <Link href="/disclaimer">Disclaimer</Link>
                     </div>
                 </div>
             </div>

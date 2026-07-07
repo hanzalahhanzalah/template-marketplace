@@ -1,0 +1,104 @@
+/* Legal Pages — Privacy Policy, Disclaimer, Terms */
+
+.page {
+    min-height: 100vh;
+}
+
+.hero {
+    background: var(--bg-secondary);
+    padding: 60px 0 40px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hero h1 {
+    margin-bottom: 8px;
+}
+
+.hero p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.content {
+    padding: 60px 0 80px;
+}
+
+/* Prose Styles */
+.prose {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+}
+
+.prose h2 {
+    font-size: 1.35rem;
+    color: var(--text-primary);
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.prose h3 {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.prose p {
+    margin-bottom: 1.25rem;
+    color: var(--text-secondary);
+}
+
+.prose ul,
+.prose ol {
+    margin: 0 0 1.25rem 1.5rem;
+    padding: 0;
+}
+
+.prose li {
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.prose a {
+    color: var(--accent-primary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.prose a:hover {
+    color: var(--accent-hover);
+}
+
+.prose strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.prose blockquote {
+    border-left: 4px solid var(--accent-primary);
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    background: var(--accent-light);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 40px 0 30px;
+    }
+
+    .content {
+        padding: 40px 0 60px;
+    }
+
+    .prose h2 {
+        font-size: 1.2rem;
+    }
+}
