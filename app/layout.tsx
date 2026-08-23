@@ -23,6 +23,9 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         site: "@templatelayer",
     },
+    other: {
+        "p:domain_verify": "640b6dedcb7868887019fcd3ea9ec994",
+    },
 };
 
 export default function RootLayout({
