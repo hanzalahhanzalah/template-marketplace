@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+    
     title: {
         default: "TemplateLayer — Free & Premium Website Templates",
         template: "%s | TemplateLayer",
